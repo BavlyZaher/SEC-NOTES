@@ -1,0 +1,101 @@
+site_name: Sec-Notes
+site_description: Personal knowledge base for security research
+site_author: Your Name
+# لو الريبو اسمه مثلا sec-notes والمستخدم username:
+# site_url: https://username.github.io/sec-notes/
+repo_url: https://github.com/username/sec-notes
+repo_name: username/sec-notes
+edit_uri: edit/main/docs/
+
+hooks:
+  - hooks.py
+
+theme:
+  name: material
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+  palette:
+    - scheme: notebook
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: dossier
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font: false
+
+nav:
+  - Library:
+      - Dashboard: index.md
+      - Web AppSec: topics/web-appsec.md
+      - Network Security: topics/network-security.md
+      - AI Security: topics/ai-security.md
+      - API Sec: topics/api-sec.md
+      - Programming: topics/programming.md
+      - HTB: topics/htb.md
+      - Write-ups: articles/index.md
+      - Checklists: topics/checklists.md
+  - Progress:
+      - This week: progress/this-week.md
+      - Bookmarked: progress/bookmarked.md
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - tags
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/sidebar-profile.js
+  - javascripts/notes-data.js
+  - javascripts/site.js
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/username
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/username
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/username
+
+copyright: Copyright &copy; 2026 Your Name

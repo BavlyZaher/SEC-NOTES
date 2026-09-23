@@ -1,0 +1,758 @@
+/* ==========================================================================
+   Sec-Notes — "Notebook" (light, default) + "Dossier" (dark) themes
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+/* ---- Light scheme: "notebook" (cream + terracotta) ---- */
+[data-md-color-scheme="notebook"] {
+  --md-default-bg-color: #f7f5f0;
+  --md-default-fg-color: #2a2620;
+  --md-default-fg-color--light: #6b6459;
+  --md-default-fg-color--lighter: #a39c8f;
+  --md-default-fg-color--lightest: #e8e3d9;
+
+  --md-primary-fg-color: #f7f5f0;
+  --md-primary-bg-color: #2a2620;
+
+  --md-accent-fg-color: #d9702f;
+  --md-accent-fg-color--transparent: #d9702f22;
+
+  --md-typeset-color: #2a2620;
+  --md-typeset-a-color: #d9702f;
+
+  --md-code-bg-color: #ffffff;
+  --md-code-fg-color: #8a4a1e;
+
+  --md-footer-fg-color: #6b6459;
+  --md-footer-fg-color--light: #a39c8f;
+  --md-footer-bg-color: #eeebe3;
+
+  --nb-card-bg: #ffffff;
+  --nb-card-border: #ebe6db;
+  --nb-chip-peach: #f7ddca;
+  --nb-chip-mint: #d6e7de;
+  --nb-chip-lavender: #e2dcf0;
+  --nb-active-bg: #f7ddca;
+
+  --tag-web-fg: #a04f16;
+  --tag-net-fg: #4a3a8f;
+  --tag-ai-fg: #2c6b4d;
+  --tag-api-fg: #1a6b6b;
+  --tag-dev-fg: #7a4a10;
+  --tag-htb-fg: #6b3f1a;
+
+  --md-code-hl-color: #d9702f22;
+  --md-code-hl-color--light: #d9702f11;
+  --md-code-hl-number-color: #a04f16;
+  --md-code-hl-special-color: #a04f16;
+  --md-code-hl-function-color: #6a4a9c;
+  --md-code-hl-constant-color: #a04f16;
+  --md-code-hl-keyword-color: #2f5ea8;
+  --md-code-hl-string-color: #2f7d4f;
+  --md-code-hl-name-color: #2a2620;
+  --md-code-hl-operator-color: #6b6459;
+  --md-code-hl-punctuation-color: #6b6459;
+  --md-code-hl-comment-color: #8a8378;
+  --md-code-hl-generic-color: #a04f16;
+  --md-code-hl-variable-color: #2a2620;
+}
+
+/* ---- Dark scheme: "dossier" ---- */
+[data-md-color-scheme="dossier"] {
+  --md-default-bg-color: #17161a;
+  --md-default-fg-color: #ece8e2;
+  --md-default-fg-color--light: #a89f92;
+  --md-default-fg-color--lighter: #83796b;
+  --md-default-fg-color--lightest: #322f29;
+
+  --md-primary-fg-color: #17161a;
+  --md-primary-bg-color: #ece8e2;
+
+  --md-accent-fg-color: #ef8b4c;
+  --md-accent-fg-color--transparent: #ef8b4c26;
+
+  --md-typeset-color: #ece8e2;
+  --md-typeset-a-color: #ef8b4c;
+
+  --md-code-bg-color: #201e1a;
+  --md-code-fg-color: #f0b57e;
+
+  --md-footer-fg-color: #ece8e2;
+  --md-footer-fg-color--light: #a39c90;
+  --md-footer-bg-color: #100f11;
+
+  --nb-card-bg: #201e1a;
+  --nb-card-border: #2c2a26;
+  --nb-chip-peach: #402c1c;
+  --nb-chip-mint: #1d2e26;
+  --nb-chip-lavender: #241f36;
+  --nb-active-bg: #3a2a1d;
+
+  --tag-web-fg: #f3a56a;
+  --tag-net-fg: #b3a6f0;
+  --tag-ai-fg: #7fd9ab;
+  --tag-api-fg: #7fd4d4;
+  --tag-dev-fg: #e0b478;
+  --tag-htb-fg: #d9a066;
+
+  --md-code-hl-color: #ef8b4c26;
+  --md-code-hl-color--light: #ef8b4c14;
+  --md-code-hl-number-color: #f0b57e;
+  --md-code-hl-special-color: #f0b57e;
+  --md-code-hl-function-color: #c9a8f0;
+  --md-code-hl-constant-color: #f0b57e;
+  --md-code-hl-keyword-color: #7fb0e0;
+  --md-code-hl-string-color: #9ecb8f;
+  --md-code-hl-name-color: #ece8e2;
+  --md-code-hl-operator-color: #a89f92;
+  --md-code-hl-punctuation-color: #a89f92;
+  --md-code-hl-comment-color: #83796b;
+  --md-code-hl-generic-color: #f0b57e;
+  --md-code-hl-variable-color: #ece8e2;
+}
+
+/* ---- Typography ---- */
+body,
+.md-typeset {
+  font-family: "IBM Plex Sans", -apple-system, sans-serif;
+}
+
+code, kbd, pre,
+.md-typeset code,
+.eyebrow,
+.stat-strip {
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--light);
+  margin-top: 2.4rem;
+  margin-bottom: 1rem;
+  border: none;
+}
+
+/* ---- Links ---- */
+.md-typeset a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--md-accent-fg-color--transparent);
+  transition: border-color 0.15s;
+}
+.md-typeset a:hover {
+  border-bottom-color: var(--md-accent-fg-color);
+}
+
+/* ---- Eyebrow label ---- */
+.eyebrow {
+  color: var(--md-accent-fg-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-subtitle {
+  color: var(--md-default-fg-color--light);
+  font-size: 1rem;
+  max-width: 46rem;
+  line-height: 1.7;
+}
+
+/* ---- Stat strip ---- */
+.stat-strip {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--light);
+  margin: 1rem 0 0.5rem;
+}
+.stat-strip strong {
+  color: var(--md-default-fg-color);
+}
+
+/* ---- Topic card grid ---- */
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 1000px) {
+  .topic-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .topic-grid { grid-template-columns: 1fr; }
+}
+
+.md-typeset .topic-card {
+  display: block;
+  background: var(--nb-card-bg);
+  border: 1px solid var(--nb-card-border);
+  border-radius: 14px;
+  padding: 1.2rem 1.3rem;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.md-typeset .topic-card:hover {
+  border-color: var(--md-accent-fg-color--transparent);
+}
+
+.topic-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", sans-serif;
+}
+.topic-icon.peach { background: var(--nb-chip-peach); }
+.topic-icon.mint { background: var(--nb-chip-mint); }
+.topic-icon.lavender { background: var(--nb-chip-lavender); }
+
+.md-typeset .topic-card .topic-title {
+  display: block;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--md-default-fg-color);
+  border-bottom: none;
+  margin-bottom: 0.3rem;
+}
+
+.topic-desc {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  line-height: 1.5;
+  margin-bottom: 0.6rem;
+}
+
+.topic-count {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--lighter);
+}
+
+/* ---- Recently added list ---- */
+.recent-list {
+  border: 1px solid var(--nb-card-border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--nb-card-bg);
+}
+
+.md-typeset .recent-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.2rem;
+  border-bottom: 1px solid var(--nb-card-border);
+  border-radius: 0;
+}
+.md-typeset .recent-row:last-child {
+  border-bottom: none;
+}
+
+.recent-tag {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+}
+.recent-tag.web { background: var(--nb-chip-peach); color: var(--tag-web-fg); }
+.recent-tag.net { background: var(--nb-chip-lavender); color: var(--tag-net-fg); }
+.recent-tag.ai { background: var(--nb-chip-mint); color: var(--tag-ai-fg); }
+.recent-tag.api { background: var(--nb-chip-mint); color: var(--tag-api-fg); }
+.recent-tag.dev { background: var(--nb-chip-peach); color: var(--tag-dev-fg); }
+.recent-tag.htb { background: var(--nb-chip-lavender); color: var(--tag-htb-fg); }
+
+.md-typeset .recent-row .recent-title {
+  flex: 1;
+  font-weight: 500;
+  color: var(--md-default-fg-color);
+  border-bottom: none;
+  font-size: 0.92rem;
+}
+
+.recent-date {
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--lighter);
+  white-space: nowrap;
+}
+
+/* ---- Article cards (Write-ups topic page) ---- */
+.md-typeset .article-card {
+  border: 1px solid var(--nb-card-border);
+  border-radius: 12px;
+  background: var(--nb-card-bg);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 0.9rem;
+}
+.md-typeset .article-card a {
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-bottom: none;
+}
+.md-typeset .article-card p {
+  margin: 0.3rem 0 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.85rem;
+}
+
+/* ---- Sidebar: compact identity + search injected by sidebar-profile.js ---- */
+.sn-identity {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0 0.6rem 1rem;
+}
+.sn-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--md-accent-fg-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: "JetBrains Mono", monospace;
+  flex-shrink: 0;
+  overflow: hidden;
+}.sn-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sn-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--md-default-fg-color);
+}
+.sn-subtitle {
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.sn-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0.6rem 1.2rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  background: var(--nb-card-bg);
+  border: 1px solid var(--nb-card-border);
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: var(--md-default-fg-color--light);
+}
+.sn-search:hover {
+  border-color: var(--md-accent-fg-color--transparent);
+}
+.sn-search-icon {
+  font-size: 0.85rem;
+}
+
+/* ---- Social icon row (above the search box) ---- */
+.sn-socials {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0 0.6rem 1rem;
+}
+.sn-socials a {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--nb-card-bg);
+  border: 1px solid var(--nb-card-border);
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--nb-card-border) !important;
+  text-decoration: none !important;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", sans-serif;
+}
+.sn-socials a:hover {
+  border-color: var(--md-accent-fg-color--transparent) !important;
+}
+
+/* ---- "Surprise me" random-note link ---- */
+.sn-random {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0.6rem 1.2rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.sn-random span:first-child {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", sans-serif;
+}
+.sn-random:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* ---- About Us quick-access button (sits where the social icons used to) ---- */
+.sn-about-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0.6rem 0.6rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  background: var(--nb-card-bg);
+  border: 1px solid var(--nb-card-border);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.sn-about-btn span:first-child {
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", sans-serif;
+}
+.sn-about-btn:hover {
+  border-color: var(--md-accent-fg-color--transparent);
+  color: var(--md-accent-fg-color);
+}
+
+/* ---- Copy-link button next to the pub-date/read-time line ---- */
+.sn-copy-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--lighter);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.sn-copy-link:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* ---- Nav section headers ("Library" / "Progress") ---- */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--lighter);
+  pointer-events: none;
+  cursor: default;
+  margin-top: 0.6rem;
+}
+
+/* ---- Bullet dot before each leaf nav item ---- */
+/* Material renders an extra <label for="__toc"> alongside the real <a>
+   link on whichever page is currently active (used only on narrow/mobile
+   layouts to toggle that page's table of contents). We must not style it
+   like a normal link on desktop, or it shows up as a second, duplicate
+   "active" entry next to the real one. */
+.md-nav--primary .md-nav__item .md-nav__item > label.md-nav__link[for] {
+  display: none;
+}
+.md-nav--primary .md-nav__item .md-nav__item > a.md-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.md-nav--primary .md-nav__item .md-nav__item > a.md-nav__link::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--md-default-fg-color--lighter);
+  flex-shrink: 0;
+}
+.md-nav--primary .md-nav__item .md-nav__item > a.md-nav__link--active::before {
+  background: var(--md-accent-fg-color);
+}
+
+/* ---- About page: two profile cards ---- */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 700px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+.md-typeset .about-card {
+  background: var(--nb-card-bg);
+  border: 1px solid var(--nb-card-border);
+  border-radius: 16px;
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+}
+
+.about-avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: var(--md-accent-fg-color);
+  color: #fff;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.about-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-name {
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--md-default-fg-color);
+}
+.about-role {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--md-accent-fg-color);
+  margin-bottom: 0.8rem;
+}
+.about-bio {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 1.1rem;
+}
+
+.about-socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+  font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Segoe UI Symbol", sans-serif;
+}
+.about-socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--nb-card-border);
+  border-bottom: 1px solid var(--nb-card-border) !important;
+  text-decoration: none !important;
+  font-size: 1rem;
+}
+.about-socials a:hover {
+  border-color: var(--md-accent-fg-color--transparent) !important;
+}
+
+.about-section-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--md-default-fg-color--lighter);
+  text-align: start;
+  margin: 1.1rem 0 0.5rem;
+  border-top: 1px dashed var(--nb-card-border);
+  padding-top: 1rem;
+}
+.about-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: flex-start;
+}
+.about-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: var(--nb-chip-mint);
+  color: var(--tag-ai-fg);
+}
+.about-pill--hof {
+  background: var(--nb-chip-peach);
+  color: var(--tag-web-fg);
+}
+.md-nav__item .md-nav__link--active {
+  background: var(--nb-active-bg);
+  color: var(--md-accent-fg-color) !important;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* ---- Hide the footer entirely (copyright / prev-next / social row) ---- */
+.md-footer {
+  display: none !important;
+}
+
+/* ---- Published date + reading time badge (on a note's own page) ---- */
+.sn-pub-date,
+.sn-read-badge {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* ---- Full-width "note row" card (topic pages + Write-ups + Recently added) ---- */
+.md-typeset .note-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.9rem 1.2rem;
+  background: var(--nb-card-bg);
+  border: 1px solid var(--nb-card-border);
+  border-radius: 12px;
+  margin-bottom: 0.7rem;
+}
+.md-typeset .note-row:hover {
+  border-color: var(--md-accent-fg-color--transparent);
+}
+.md-typeset .note-row .note-row-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex: 1;
+  min-width: 0;
+  border-bottom: none;
+  color: inherit;
+}
+.md-typeset .note-row .note-row-title {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--md-default-fg-color);
+  border-bottom: none;
+}
+.note-row-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--md-default-fg-color--lighter);
+  white-space: nowrap;
+}
+.note-row-bookmark {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: var(--md-default-fg-color--lighter);
+  line-height: 1;
+  padding: 0.2rem 0.3rem;
+  flex-shrink: 0;
+}
+.note-row-bookmark:hover {
+  color: var(--md-accent-fg-color);
+}
+
+/* ---- Group title, when a topic groups notes into collections (e.g. a
+   cert path like "cpts" holding several modules) ---- */
+.sn-group-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--md-default-fg-color--light);
+  margin: 1.2rem 0 0.6rem;
+}
+.sn-notes-list > .sn-group-title:first-child {
+  margin-top: 0;
+}
+
+/* ---- "NEW" badge on notes published in the last 3 days ---- */
+.sn-new-badge {
+  display: inline-block;
+  margin-inline-start: 0.5rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--md-accent-fg-color);
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  vertical-align: middle;
+}
+
+/* ---- Tag filter pills (topic pages / Write-ups) ---- */
+.sn-tag-filter {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+.sn-tag-pill {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--nb-card-border);
+  background: var(--nb-card-bg);
+  color: var(--md-default-fg-color--light);
+  cursor: pointer;
+}
+.sn-tag-pill.active {
+  background: var(--nb-active-bg);
+  color: var(--md-accent-fg-color);
+  border-color: transparent;
+}
+
+/* Recently-added list reuses .note-row too, but without the outer card
+   border/radius/margin per-row since .recent-list already provides that
+   frame — this keeps both contexts visually distinct but consistent. */
+.recent-list .note-row {
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0;
+  border-bottom: 1px solid var(--nb-card-border);
+}
+.recent-list .note-row:last-child {
+  border-bottom: none;
+}
+
+/* ---- Print / save-as-PDF: strip all site chrome, keep just the article ---- */
+@media print {
+  .md-sidebar,
+  .md-header,
+  .md-footer,
+  .sn-copy-link,
+  .note-row-bookmark,
+  [data-md-component="skip"] {
+    display: none !important;
+  }
+  .md-content {
+    margin: 0 !important;
+  }
+  .md-grid {
+    max-width: 100% !important;
+  }
+}
+
