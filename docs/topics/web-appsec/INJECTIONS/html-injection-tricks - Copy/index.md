@@ -8,7 +8,8 @@ tags:
   - phishing
 ---
 
-![alt text](WhatsApp Image 2025-03-26 at 18.27.11_f46937ee-1.jpg)
+<img width="913" height="1280" alt="WhatsApp Image 2025-03-26 at 18 27 11_f46937ee" src="https://github.com/user-attachments/assets/86df9c13-8197-4e4c-8770-3fc7a4781a1f" />
+
 
 # HTML Injection — Escalation Tricks
 
