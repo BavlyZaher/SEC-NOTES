@@ -8,7 +8,7 @@ tags:
   - phishing
 ---
 
-<img width="913" height="1280" alt="WhatsApp Image 2025-03-26 at 18 27 11_f46937ee" src="https://github.com/user-attachments/assets/86df9c13-8197-4e4c-8770-3fc7a4781a1f" />
+[https://github.com/user-attachments/assets/86df9c13-8197-4e4c-8770-3fc7a4781a1f](https://github.com/BavlyZaher/SEC-NOTES/blob/main/docs/topics/web-appsec/INJECTIONS/html-injection-tricks%20-%20Copy/WhatsApp%20Image%202025-03-26%20at%2018.27.11_f46937ee.jpg)
 
 
 # HTML Injection — Escalation Tricks
