@@ -12,12 +12,12 @@ var SN_NOTES = [
     "readMins": 1
   },
   {
-    "title": "HTML Injection — Escalation Tricks",
+    "title": "HTML Injection — ALL THINGS",
     "url": "topics/web-appsec/html-injection-tricks/",
     "topic": "web-appsec",
     "tag": "WEB",
     "date": "2026-09-22",
-    "readMins": 3
+    "readMins": 14
   },
   {
     "title": "XSS Notes",
