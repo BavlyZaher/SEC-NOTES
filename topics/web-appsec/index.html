@@ -13,10 +13,6 @@
       
       
       
-        <link rel="prev" href="../..">
-      
-      
-        <link rel="next" href="../network-security/">
       
       
         
@@ -27,7 +23,7 @@
     
     
       
-        <title>Web AppSec - Sec-Notes</title>
+        <title>HTML Injection — ALL THINGS - Sec-Notes</title>
       
     
     
@@ -74,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#web-appsec" class="md-skip">
+        <a href="#html-injection-complete-beginner-bug-hunter-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Web AppSec
+              HTML Injection — ALL THINGS
             
           </span>
         </div>
@@ -255,8 +251,6 @@
       
   
   
-    
-  
   
   
     
@@ -269,11 +263,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
@@ -294,7 +288,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -337,19 +331,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="./" class="md-nav__link">
         
   
   
@@ -365,7 +350,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -709,6 +693,25 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Contents
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -722,9 +725,34 @@
                 
                   
 
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">html-injection</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">phishing</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">web</span>
+      
+    
+  </nav>
+
 
   
-    <a href="https://github.com/username/sec-notes/edit/main/docs/topics/web-appsec.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/username/sec-notes/edit/main/docs/topics/web-appsec/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -732,22 +760,1807 @@
   
 
 
-<h1 id="web-appsec">Web AppSec<a class="headerlink" href="#web-appsec" title="Permanent link">&para;</a></h1>
-<p>OWASP Top 10، ثغرات الـ authentication، أنماط IDOR، وأي حاجة متعلقة بأمن تطبيقات الويب.</p>
-<div class="sn-notes-list" data-topic="web-appsec"></div>
+<h1 id="html-injection-complete-beginner-bug-hunter-guide">HTML Injection — Complete Beginner Bug Hunter Guide<a class="headerlink" href="#html-injection-complete-beginner-bug-hunter-guide" title="Permanent link">&para;</a></h1>
+<p><span class="sn-pub-date" data-date="2026-09-22"></span> · <span class="sn-read-badge"></span></p>
 
-<div class="sn-empty-state" data-topic="web-appsec">
-<div class="admonition info">
-<p class="admonition-title">لسه فاضي</p>
-<p>مفيش نوتس هنا لسه — أول ما تضيف مقال في التوبيك ده، ضيفه في <code>SN_NOTES</code> جوه <code>docs/javascripts/site.js</code> وهيظهر هنا وفي الداشبورد أوتوماتيك.</p>
-</div>
-</div>
+<blockquote>
+<p>A practical guide for beginner bug hunters to understand, discover, validate, exploit safely, and report HTML Injection vulnerabilities.</p>
+</blockquote>
+<hr />
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#html-injection--complete-beginner-bug-hunter-guide">HTML Injection — Complete Beginner Bug Hunter Guide</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
+<li><a href="#1-what-is-html-injection">1. What Is HTML Injection?</a></li>
+<li><a href="#welcome-injected">Welcome, <strong>Injected</strong></a></li>
+<li><a href="#2-html-basics-you-need-before-testing">2. HTML Basics You Need Before Testing</a></li>
+<li><a href="#3-how-html-injection-happens">3. How HTML Injection Happens</a></li>
+<li><a href="#4-html-injection-vs-xss">4. HTML Injection vs XSS</a><ul>
+<li><a href="#html-injection">HTML Injection</a></li>
+<li><a href="#xss">XSS</a></li>
+<li><a href="#important-bug-bounty-rule">Important Bug Bounty Rule</a></li>
+</ul>
+</li>
+<li><a href="#5-types-of-html-injection">5. Types of HTML Injection</a></li>
+<li><a href="#51-reflected-html-injection">5.1 Reflected HTML Injection</a></li>
+<li><a href="#52-stored-html-injection">5.2 Stored HTML Injection</a></li>
+<li><a href="#53-dom-based-html-injection">5.3 DOM-Based HTML Injection</a></li>
+<li><a href="#6-understanding-html-contexts">6. Understanding HTML Contexts</a><ul>
+<li><a href="#html-body">HTML body</a></li>
+<li><a href="#attribute">Attribute</a></li>
+<li><a href="#link">Link</a></li>
+<li><a href="#image">Image</a></li>
+<li><a href="#javascript">JavaScript</a></li>
+<li><a href="#css">CSS</a></li>
+</ul>
+</li>
+<li><a href="#7-where-to-look-for-html-injection">7. Where to Look for HTML Injection</a></li>
+<li><a href="#common-inputs">Common inputs</a></li>
+<li><a href="#8-first-detection-method">8. First Detection Method</a></li>
+<li><a href="#9-safe-html-injection-payloads">9. Safe HTML Injection Payloads</a></li>
+<li><a href="#basic-text-formatting">Basic text formatting</a></li>
+<li><a href="#element-creation">Element creation</a></li>
+<li><a href="#link-creation">Link creation</a></li>
+<li><a href="#image-element">Image element</a></li>
+<li><a href="#10-testing-html-body-context">10. Testing HTML Body Context</a><ul>
+<li><a href="#what-you-should-record">What you should record</a></li>
+</ul>
+</li>
+<li><a href="#11-testing-attribute-context">11. Testing Attribute Context</a></li>
+<li><a href="#12-breaking-out-of-quoted-attributes">12. Breaking Out of Quoted Attributes</a></li>
+<li><a href="#13-testing-links-and-urls">13. Testing Links and URLs</a></li>
+<li><a href="#14-testing-form-injection">14. Testing Form Injection</a></li>
+<li><a href="#15-base-tag-injection">15. Base Tag Injection</a></li>
+<li><a href="#16-relative-urls-and-why-base-matters">16. Relative URLs and Why <code>&lt;base&gt;</code> Matters</a></li>
+<li><a href="#testing-for-base-tag-injection">Testing for Base Tag Injection</a></li>
+<li><a href="#csp-defense">CSP Defense</a></li>
+<li><a href="#17-dom-based-html-injection">17. DOM-Based HTML Injection</a></li>
+<li><a href="#example">Example</a></li>
+<li><a href="#18-stored-html-injection">18. Stored HTML Injection</a></li>
+<li><a href="#stored-injection-testing-method">Stored Injection Testing Method</a><ul>
+<li><a href="#step-1">Step 1</a></li>
+<li><a href="#step-2">Step 2</a></li>
+<li><a href="#step-3">Step 3</a></li>
+<li><a href="#step-4">Step 4</a></li>
+<li><a href="#step-5">Step 5</a></li>
+<li><a href="#step-6">Step 6</a></li>
+<li><a href="#step-7">Step 7</a></li>
+</ul>
+</li>
+<li><a href="#19-reflected-html-injection">19. Reflected HTML Injection</a></li>
+<li><a href="#reflected-injection-checklist">Reflected Injection Checklist</a></li>
+<li><a href="#20-html-injection-through-apis">20. HTML Injection Through APIs</a></li>
+<li><a href="#21-html-injection-in-modern-applications">21. HTML Injection in Modern Applications</a></li>
+<li><a href="#22-testing-methodology-with-burp-suite">22. Testing Methodology With Burp Suite</a></li>
+<li><a href="#step-1--find-an-input">Step 1 — Find an Input</a></li>
+<li><a href="#step-2--send-to-repeater">Step 2 — Send to Repeater</a></li>
+<li><a href="#step-3--change-the-value">Step 3 — Change the Value</a></li>
+<li><a href="#step-4--search-the-response">Step 4 — Search the Response</a></li>
+<li><a href="#step-5--test-html">Step 5 — Test HTML</a></li>
+<li><a href="#step-6--inspect-the-rendered-result">Step 6 — Inspect the Rendered Result</a></li>
+<li><a href="#23-finding-the-injection-context">23. Finding the Injection Context</a></li>
+<li><a href="#24-understanding-encoding">24. Understanding Encoding</a></li>
+<li><a href="#25-html-entity-encoding">25. HTML Entity Encoding</a></li>
+<li><a href="#26-filter-and-waf-testing">26. Filter and WAF Testing</a></li>
+<li><a href="#what-to-test">What to Test</a></li>
+<li><a href="#27-common-developer-mistakes">27. Common Developer Mistakes</a></li>
+<li><a href="#mistake-1--string-concatenation">Mistake 1 — String concatenation</a></li>
+<li><a href="#mistake-2--trusting-client-side-validation">Mistake 2 — Trusting client-side validation</a></li>
+<li><a href="#mistake-3--blacklisting-script">Mistake 3 — Blacklisting <code>&lt;script&gt;</code></a></li>
+<li><a href="#mistake-4--encoding-only-some-characters">Mistake 4 — Encoding only some characters</a></li>
+<li><a href="#mistake-5--encoding-too-early">Mistake 5 — Encoding too early</a></li>
+<li><a href="#28-impact-assessment">28. Impact Assessment</a></li>
+<li><a href="#low-impact-example">Low-impact example</a></li>
+<li><a href="#higher-impact-example">Higher-impact example</a></li>
+<li><a href="#higher-impact-example-1">Higher-impact example</a></li>
+<li><a href="#higher-impact-example-2">Higher-impact example</a></li>
+<li><a href="#potential-escalation">Potential escalation</a></li>
+<li><a href="#29-when-html-injection-becomes-xss">29. When HTML Injection Becomes XSS</a></li>
+<li><a href="#30-html-injection-and-csrf">30. HTML Injection and CSRF</a></li>
+<li><a href="#31-html-injection-and-password-managers">31. HTML Injection and Password Managers</a></li>
+<li><a href="#32-html-injection-and-phishing">32. HTML Injection and Phishing</a></li>
+<li><a href="#33-how-to-confirm-a-real-vulnerability">33. How to Confirm a Real Vulnerability</a></li>
+<li><a href="#1-input-control">1. Input Control</a></li>
+<li><a href="#2-html-interpretation">2. HTML Interpretation</a></li>
+<li><a href="#3-security-impact">3. Security Impact</a></li>
+<li><a href="#34-false-positives">34. False Positives</a></li>
+<li><a href="#35-bug-bounty-severity">35. Bug Bounty Severity</a></li>
+<li><a href="#36-writing-the-bug-report">36. Writing the Bug Report</a></li>
+<li><a href="#37-remediation">37. Remediation</a></li>
+<li><a href="#38-developer-side-secure-coding">38. Developer-Side Secure Coding</a></li>
+<li><a href="#unsafe">Unsafe</a></li>
+<li><a href="#safer">Safer</a></li>
+<li><a href="#server-side-example">Server-Side Example</a></li>
+<li><a href="#39-html-sanitization">39. HTML Sanitization</a></li>
+<li><a href="#40-content-security-policy">40. Content Security Policy</a></li>
+<li><a href="#41-testing-checklist">41. Testing Checklist</a></li>
+<li><a href="#discovery">Discovery</a></li>
+<li><a href="#reflection">Reflection</a></li>
+<li><a href="#context">Context</a></li>
+<li><a href="#encoding">Encoding</a></li>
+<li><a href="#html">HTML</a></li>
+<li><a href="#impact">Impact</a></li>
+<li><a href="#42-beginner-bug-hunter-workflow">42. Beginner Bug Hunter Workflow</a></li>
+<li><a href="#43-advanced-testing-ideas">43. Advanced Testing Ideas</a></li>
+<li><a href="#431-context-transitions">43.1 Context transitions</a></li>
+<li><a href="#432-tag-termination">43.2 Tag termination</a></li>
+<li><a href="#433-attribute-injection">43.3 Attribute injection</a></li>
+<li><a href="#434-url-manipulation">43.4 URL manipulation</a></li>
+<li><a href="#435-base-url-manipulation">43.5 Base URL manipulation</a></li>
+<li><a href="#436-dom-sinks">43.6 DOM sinks</a></li>
+<li><a href="#44-useful-tools">44. Useful Tools</a></li>
+<li><a href="#burp-suite">Burp Suite</a></li>
+<li><a href="#browser-devtools">Browser DevTools</a></li>
+<li><a href="#browser-view-source">Browser View Source</a></li>
+<li><a href="#45-final-cheat-sheet">45. Final Cheat Sheet</a></li>
+<li><a href="#definition">Definition</a></li>
+<li><a href="#main-types">Main Types</a></li>
+<li><a href="#first-payload">First Payload</a></li>
+<li><a href="#other-safe-tests">Other Safe Tests</a></li>
+<li><a href="#main-question">Main Question</a></li>
+<li><a href="#contexts">Contexts</a></li>
+<li><a href="#dangerous-sinks">Dangerous Sinks</a></li>
+<li><a href="#interesting-html-elements">Interesting HTML Elements</a></li>
+<li><a href="#base-tag">Base Tag</a></li>
+<li><a href="#encoding-1">Encoding</a></li>
+<li><a href="#detection-logic">Detection Logic</a></li>
+<li><a href="#reporting-rule">Reporting Rule</a></li>
+<li><a href="#46-references">46. References</a><ul>
+<li><a href="#owasp">OWASP</a></li>
+<li><a href="#portswigger">PortSwigger</a></li>
+<li><a href="#cwe">CWE</a></li>
+<li><a href="#invicti">Invicti</a></li>
+<li><a href="#qualys">Qualys</a></li>
+<li><a href="#punk-security">Punk Security</a></li>
+<li><a href="#cdnetworks">CDNetworks</a></li>
+<li><a href="#wallarm">Wallarm</a></li>
+</ul>
+</li>
+<li><a href="#the-most-important-lesson">The Most Important Lesson</a></li>
+</ul>
+<hr />
+<h1 id="1-what-is-html-injection">1. What Is HTML Injection?<a class="headerlink" href="#1-what-is-html-injection" title="Permanent link">&para;</a></h1>
+<p>HTML Injection happens when an application takes attacker-controlled input and places it into an HTML page <strong>without properly encoding or sanitizing it</strong>.</p>
+<p>The browser then interprets the injected input as <strong>HTML</strong> instead of treating it as normal text.</p>
+<p>For example, imagine a website contains:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome, USERNAME<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The application expects:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Welcome, Ahmed
+</span></code></pre></div>
+<p>But an attacker supplies:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Injected<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The server might generate:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome, <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Injected<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The browser renders:</p>
+<h1 id="welcome-injected">Welcome, <strong>Injected</strong><a class="headerlink" href="#welcome-injected" title="Permanent link">&para;</a></h1>
+<p>The important point is:</p>
+<blockquote>
+<p>The attacker did not simply change text. They changed the structure of the HTML document.</p>
+</blockquote>
+<p>OWASP describes HTML Injection as the ability to control an input point and inject arbitrary HTML into a vulnerable web page.</p>
+<p>Invicti similarly describes HTML Injection as arbitrary HTML markup being inserted into legitimate application HTML.</p>
+<hr />
+<h1 id="2-html-basics-you-need-before-testing">2. HTML Basics You Need Before Testing<a class="headerlink" href="#2-html-basics-you-need-before-testing" title="Permanent link">&para;</a></h1>
+<p>You do <strong>not</strong> need to become an HTML expert before hunting HTML Injection.</p>
+<p>You should understand:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">&lt;</span><span class="nt">tag</span><span class="p">&gt;</span>content<span class="p">&lt;/</span><span class="nt">tag</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Examples:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>Hello<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/profile"</span><span class="p">&gt;</span>Profile<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"/image.png"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>HTML elements can also contain attributes:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/profile"</span> <span class="na">class</span><span class="o">=</span><span class="s">"button"</span><span class="p">&gt;</span>Profile<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Here:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>a       = tag
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>href    = attribute
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>/profile = attribute value
+</span></code></pre></div>
+<p>Another example:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">value</span><span class="o">=</span><span class="s">"Ahmed"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The value is inside an HTML attribute.</p>
+<p>This distinction is extremely important for bug hunting.</p>
+<hr />
+<h1 id="3-how-html-injection-happens">3. How HTML Injection Happens<a class="headerlink" href="#3-how-html-injection-happens" title="Permanent link">&para;</a></h1>
+<p>The basic vulnerability looks like this:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Attacker Input
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>      |
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>      v
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Application
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>      |
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>      v
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>HTML Response
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>      |
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>      v
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>Browser
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>      |
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>      v
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>Injected HTML
+</span></code></pre></div>
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>GET /search?q=hello
+</span></code></pre></div>
+<p>Application:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Search results for: hello<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Now test:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>GET /search?q=&lt;b&gt;TEST&lt;/b&gt;
+</span></code></pre></div>
+<p>If the response becomes:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Search results for: <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>the application is interpreting attacker-controlled input as HTML.</p>
+<p>If instead the response becomes:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Search results for: <span class="ni">&amp;lt;</span>b<span class="ni">&amp;gt;</span>TEST<span class="ni">&amp;lt;</span>/b<span class="ni">&amp;gt;</span><span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>the application is treating it as text.</p>
+<p>That distinction is the foundation of HTML Injection testing.</p>
+<hr />
+<h1 id="4-html-injection-vs-xss">4. HTML Injection vs XSS<a class="headerlink" href="#4-html-injection-vs-xss" title="Permanent link">&para;</a></h1>
+<p>This is one of the most important concepts for a beginner.</p>
+<p>HTML Injection and XSS are closely related, but they are not automatically the same finding.</p>
+<h3 id="html-injection">HTML Injection<a class="headerlink" href="#html-injection" title="Permanent link">&para;</a></h3>
+<p>The attacker can inject HTML:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Injected text<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>but cannot execute attacker-controlled JavaScript.</p>
+<h3 id="xss">XSS<a class="headerlink" href="#xss" title="Permanent link">&para;</a></h3>
+<p>The attacker can execute JavaScript in the victim's browser.</p>
+<p>For example, conceptually:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;...&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>or another scriptable HTML context.</p>
+<p>OWASP and CWE treat XSS as a broader weakness involving improper neutralization of untrusted input during web-page generation. CWE-79 explicitly discusses HTML body, attributes, URLs, JavaScript, CSS, and other contexts.</p>
+<p>Invicti notes that HTML Injection is generally more limited than XSS because pure HTML does not inherently provide the same scripting capabilities.</p>
+<h3 id="important-bug-bounty-rule">Important Bug Bounty Rule<a class="headerlink" href="#important-bug-bounty-rule" title="Permanent link">&para;</a></h3>
+<p>Do <strong>not</strong> automatically report:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>HTML reflected
+</span></code></pre></div>
+<p>as:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Stored XSS
+</span></code></pre></div>
+<p>or:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Reflected XSS
+</span></code></pre></div>
+<p>unless you actually demonstrate script execution or another accepted XSS condition.</p>
+<hr />
+<h1 id="5-types-of-html-injection">5. Types of HTML Injection<a class="headerlink" href="#5-types-of-html-injection" title="Permanent link">&para;</a></h1>
+<p>There are three useful categories to understand.</p>
+<h2 id="51-reflected-html-injection">5.1 Reflected HTML Injection<a class="headerlink" href="#51-reflected-html-injection" title="Permanent link">&para;</a></h2>
+<p>The payload comes from the request and is immediately reflected.</p>
+<p>Example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/search?q=&lt;b&gt;TEST&lt;/b&gt;
+</span></code></pre></div>
+<p>Response:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Results for <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The payload is not permanently stored.</p>
+<p>Invicti describes reflected HTML Injection as malicious HTML being reflected from request input into the response.</p>
+<hr />
+<h2 id="52-stored-html-injection">5.2 Stored HTML Injection<a class="headerlink" href="#52-stored-html-injection" title="Permanent link">&para;</a></h2>
+<p>The application stores attacker-controlled HTML and displays it later.</p>
+<p>Example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Username:
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>&lt;b&gt;HACKED&lt;/b&gt;
+</span></code></pre></div>
+<p>The application stores it.</p>
+<p>Later:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Welcome <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>HACKED<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Every user viewing the affected page may see the injected content.</p>
+<p>Possible locations include:</p>
+<ul>
+<li>comments</li>
+<li>profiles</li>
+<li>usernames</li>
+<li>display names</li>
+<li>posts</li>
+<li>tickets</li>
+<li>support messages</li>
+<li>project names</li>
+<li>organization names</li>
+<li>document titles</li>
+<li>notifications</li>
+<li>chat messages</li>
+<li>custom fields</li>
+</ul>
+<p>Stored injection can therefore have a much larger audience than a reflected issue.</p>
+<hr />
+<h2 id="53-dom-based-html-injection">5.3 DOM-Based HTML Injection<a class="headerlink" href="#53-dom-based-html-injection" title="Permanent link">&para;</a></h2>
+<p>The server may never receive the malicious input.</p>
+<p>Instead, JavaScript takes attacker-controlled data and writes it into the DOM unsafely.</p>
+<p>Example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"output"</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+</span></code></pre></div>
+<p>An attacker-controlled fragment can then become HTML.</p>
+<p>OWASP specifically identifies dangerous DOM sinks such as:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nx">innerHTML</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">()</span>
+</span></code></pre></div>
+<p>when they process untrusted input.</p>
+<hr />
+<h1 id="6-understanding-html-contexts">6. Understanding HTML Contexts<a class="headerlink" href="#6-understanding-html-contexts" title="Permanent link">&para;</a></h1>
+<p>Before creating a payload, always ask:</p>
+<blockquote>
+<p><strong>Where exactly does my input appear in the HTML response?</strong></p>
+</blockquote>
+<p>This is probably the most important skill in HTML/XSS testing.</p>
+<p>Your input could appear in:</p>
+<h3 id="html-body">HTML body<a class="headerlink" href="#html-body" title="Permanent link">&para;</a></h3>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>YOUR_INPUT<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h3 id="attribute">Attribute<a class="headerlink" href="#attribute" title="Permanent link">&para;</a></h3>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="s">"YOUR_INPUT"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h3 id="link">Link<a class="headerlink" href="#link" title="Permanent link">&para;</a></h3>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"YOUR_INPUT"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h3 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h3>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"YOUR_INPUT"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h3 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h3>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="kd">let</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"YOUR_INPUT"</span><span class="p">;</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h3 id="css">CSS<a class="headerlink" href="#css" title="Permanent link">&para;</a></h3>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="p">.</span><span class="nc">example</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">    </span><span class="k">background</span><span class="p">:</span><span class="w"> </span><span class="n">YOUR_INPUT</span><span class="p">;</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="p">}</span>
+</span><span id="__span-31-5"><a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Each context behaves differently.</p>
+<p>PortSwigger emphasizes that identifying the exact injection context is a fundamental part of testing reflected and stored XSS because the context determines which payloads can work.</p>
+<hr />
+<h1 id="7-where-to-look-for-html-injection">7. Where to Look for HTML Injection<a class="headerlink" href="#7-where-to-look-for-html-injection" title="Permanent link">&para;</a></h1>
+<p>As a beginner, start with anything that accepts user-controlled data.</p>
+<h2 id="common-inputs">Common inputs<a class="headerlink" href="#common-inputs" title="Permanent link">&para;</a></h2>
+<p>Look at:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>Search
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>Username
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>Display name
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>First name
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>Last name
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>Company name
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>Project name
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>Team name
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>Comment
+</span><span id="__span-32-10"><a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>Description
+</span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>Bio
+</span><span id="__span-32-12"><a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>Address
+</span><span id="__span-32-13"><a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>Message
+</span><span id="__span-32-14"><a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>Ticket title
+</span><span id="__span-32-15"><a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a>Ticket body
+</span><span id="__span-32-16"><a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a>File name
+</span><span id="__span-32-17"><a id="__codelineno-32-17" name="__codelineno-32-17" href="#__codelineno-32-17"></a>Document name
+</span><span id="__span-32-18"><a id="__codelineno-32-18" name="__codelineno-32-18" href="#__codelineno-32-18"></a>Product name
+</span><span id="__span-32-19"><a id="__codelineno-32-19" name="__codelineno-32-19" href="#__codelineno-32-19"></a>Category
+</span><span id="__span-32-20"><a id="__codelineno-32-20" name="__codelineno-32-20" href="#__codelineno-32-20"></a>Tag
+</span><span id="__span-32-21"><a id="__codelineno-32-21" name="__codelineno-32-21" href="#__codelineno-32-21"></a>Notification text
+</span></code></pre></div>
+<p>Also inspect:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>Query parameters
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>Path parameters
+</span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>POST parameters
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>JSON fields
+</span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>Multipart fields
+</span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>HTTP headers
+</span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>Cookies
+</span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>URL fragments
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>WebSocket messages
+</span><span id="__span-33-10"><a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>GraphQL variables
+</span><span id="__span-33-11"><a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>API requests
+</span></code></pre></div>
+<p>Do not assume that only visible form fields matter.</p>
+<p>An API may accept:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">{</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">  </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>and later render that value in another part of the application.</p>
+<hr />
+<h1 id="8-first-detection-method">8. First Detection Method<a class="headerlink" href="#8-first-detection-method" title="Permanent link">&para;</a></h1>
+<p>Start with a harmless marker.</p>
+<p>Use something unique:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>HTMLTEST123
+</span></code></pre></div>
+<p>Submit it.</p>
+<p>Then search for:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>HTMLTEST123
+</span></code></pre></div>
+<p>in:</p>
+<ul>
+<li>response body</li>
+<li>rendered page</li>
+<li>DOM</li>
+<li>page source</li>
+</ul>
+<p>If reflected, determine exactly where.</p>
+<p>Next, test whether HTML is interpreted.</p>
+<p>A safe first payload:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>HTMLTEST123<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>If rendered bold:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>HTMLTEST123
+</span></code></pre></div>
+<p>you have evidence that HTML markup is being interpreted.</p>
+<p>Another useful harmless test:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>HTMLTEST123<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>or:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>HTMLTEST123<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The goal of the first phase is not exploitation.</p>
+<p>The goal is:</p>
+<blockquote>
+<p><strong>Determine whether attacker-controlled input changes the HTML document structure.</strong></p>
+</blockquote>
+<p>Qualys specifically notes that merely finding your string in the response is not enough; a scanner should determine whether the input actually changes the document structure or causes browser-relevant behavior.</p>
+<hr />
+<h1 id="9-safe-html-injection-payloads">9. Safe HTML Injection Payloads<a class="headerlink" href="#9-safe-html-injection-payloads" title="Permanent link">&para;</a></h1>
+<p>Start simple.</p>
+<h2 id="basic-text-formatting">Basic text formatting<a class="headerlink" href="#basic-text-formatting" title="Permanent link">&para;</a></h2>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="p">&lt;</span><span class="nt">u</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">u</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="element-creation">Element creation<a class="headerlink" href="#element-creation" title="Permanent link">&para;</a></h2>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="link-creation">Link creation<a class="headerlink" href="#link-creation" title="Permanent link">&para;</a></h2>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/test"</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h2 id="image-element">Image element<a class="headerlink" href="#image-element" title="Permanent link">&para;</a></h2>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"/test.png"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>These payloads are useful because they help determine what the application permits without immediately moving into JavaScript execution.</p>
+<p>Qualys points out that even successfully creating an otherwise meaningless HTML element can demonstrate that input is not being handled securely.</p>
+<hr />
+<h1 id="10-testing-html-body-context">10. Testing HTML Body Context<a class="headerlink" href="#10-testing-html-body-context" title="Permanent link">&para;</a></h1>
+<p>Suppose you find:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>    SEARCH_VALUE
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Your input:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>HTMLTEST
+</span></code></pre></div>
+<p>becomes:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>    HTMLTEST
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Now try:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>HTMLTEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>If the browser displays:</p>
+<p><strong>HTMLTEST</strong></p>
+<p>you have confirmed HTML interpretation.</p>
+<p>Try:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>HTMLTEST<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>If the page layout changes because an <code>&lt;h1&gt;</code> element was created, that is stronger evidence.</p>
+<h3 id="what-you-should-record">What you should record<a class="headerlink" href="#what-you-should-record" title="Permanent link">&para;</a></h3>
+<p>Document:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>Input:
+</span><span id="__span-56-2"><a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>&lt;b&gt;HTMLTEST&lt;/b&gt;
+</span><span id="__span-56-3"><a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>
+</span><span id="__span-56-4"><a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>Expected:
+</span><span id="__span-56-5"><a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a>&lt;b&gt;HTMLTEST&lt;/b&gt; displayed literally.
+</span><span id="__span-56-6"><a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a>
+</span><span id="__span-56-7"><a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a>Actual:
+</span><span id="__span-56-8"><a id="__codelineno-56-8" name="__codelineno-56-8" href="#__codelineno-56-8"></a>The browser rendered HTMLTEST as bold text.
+</span></code></pre></div>
+<hr />
+<h1 id="11-testing-attribute-context">11. Testing Attribute Context<a class="headerlink" href="#11-testing-attribute-context" title="Permanent link">&para;</a></h1>
+<p>Now imagine:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="s">"YOUR_INPUT"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Your input is inside an attribute.</p>
+<p>If you submit:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>HTMLTEST
+</span></code></pre></div>
+<p>the browser sees:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="s">"HTMLTEST"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Try determining whether quotation marks are correctly handled.</p>
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>TEST"TEST
+</span></code></pre></div>
+<p>Look at the resulting HTML.</p>
+<p>Secure output might be:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="s">"TEST&amp;quot;TEST"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Potentially unsafe output could resemble:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="s">"TEST"</span><span class="na">TEST</span><span class="err">"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The second case suggests that the attacker may be able to alter the HTML structure.</p>
+<p>PortSwigger describes this exact concept: when input lands inside an attribute value, the tester needs to understand whether the value can be terminated and whether additional markup/attributes can then be introduced.</p>
+<hr />
+<h1 id="12-breaking-out-of-quoted-attributes">12. Breaking Out of Quoted Attributes<a class="headerlink" href="#12-breaking-out-of-quoted-attributes" title="Permanent link">&para;</a></h1>
+<p>Suppose the application generates:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">value</span><span class="o">=</span><span class="s">"USER_INPUT"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The intended structure is:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>value="USER_INPUT"
+</span></code></pre></div>
+<p>The important characters are:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>"
+</span></code></pre></div>
+<p>because the quote terminates the attribute.</p>
+<p>A controlled test could be:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>TEST"TEST
+</span></code></pre></div>
+<p>Then inspect:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">"text"</span> <span class="na">value</span><span class="o">=</span><span class="s">"TEST"</span><span class="na">TEST</span><span class="err">"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>If the quote is not encoded, the application may be allowing structural HTML manipulation.</p>
+<p>This does <strong>not automatically mean XSS</strong>.</p>
+<p>You have established an attribute injection condition.</p>
+<p>The next step is to determine what impact that context allows.</p>
+<hr />
+<h1 id="13-testing-links-and-urls">13. Testing Links and URLs<a class="headerlink" href="#13-testing-links-and-urls" title="Permanent link">&para;</a></h1>
+<p>A common context is:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"USER_INPUT"</span><span class="p">&gt;</span>Click<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>or:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"USER_INPUT"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>or:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"USER_INPUT"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Test with harmless URLs first.</p>
+<p>Example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-71-1"><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>https://example.com/
+</span></code></pre></div>
+<p>Then compare:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-72-1"><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>javascript:
+</span></code></pre></div>
+<p>and other schemes only on authorized targets and where the testing program permits such testing.</p>
+<p>The important concept is that URL-valued attributes are not equivalent to normal text attributes.</p>
+<p>PortSwigger notes that URL attributes can themselves create scriptable contexts and therefore require context-specific handling.</p>
+<hr />
+<h1 id="14-testing-form-injection">14. Testing Form Injection<a class="headerlink" href="#14-testing-form-injection" title="Permanent link">&para;</a></h1>
+<p>Forms deserve special attention.</p>
+<p>Suppose a page contains:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-73-1"><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">"/login"</span> <span class="na">method</span><span class="o">=</span><span class="s">"POST"</span><span class="p">&gt;</span>
+</span><span id="__span-73-2"><a id="__codelineno-73-2" name="__codelineno-73-2" href="#__codelineno-73-2"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">"username"</span><span class="p">&gt;</span>
+</span><span id="__span-73-3"><a id="__codelineno-73-3" name="__codelineno-73-3" href="#__codelineno-73-3"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">name</span><span class="o">=</span><span class="s">"password"</span><span class="p">&gt;</span>
+</span><span id="__span-73-4"><a id="__codelineno-73-4" name="__codelineno-73-4" href="#__codelineno-73-4"></a><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>If an attacker can inject HTML before or around the form, the resulting document structure may behave differently.</p>
+<p>A particularly important concept is:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-74-1"><a id="__codelineno-74-1" name="__codelineno-74-1" href="#__codelineno-74-1"></a><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>elements.</p>
+<p>HTML parsing rules do not allow forms to behave like ordinary nested containers.</p>
+<p>Therefore, malformed or injected form markup can sometimes change which controls belong to which form.</p>
+<p>This is why an HTML Injection finding involving forms can have greater impact than simple visual modification.</p>
+<p>However:</p>
+<blockquote>
+<p>Do not submit real credentials during testing.</p>
+</blockquote>
+<p>Use dummy accounts and dummy data.</p>
+<hr />
+<h1 id="15-base-tag-injection">15. Base Tag Injection<a class="headerlink" href="#15-base-tag-injection" title="Permanent link">&para;</a></h1>
+<p>One of the most interesting HTML Injection variants is:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-75-1"><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a><span class="p">&lt;</span><span class="nt">base</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The <code>&lt;base&gt;</code> element establishes the base URL used to resolve relative URLs in a document.</p>
+<p>For example:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-76-1"><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a><span class="p">&lt;</span><span class="nt">base</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://example.com/"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Consider:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-77-1"><a id="__codelineno-77-1" name="__codelineno-77-1" href="#__codelineno-77-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"/static/app.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>With the appropriate base URL, relative references are resolved against that base.</p>
+<p>Punk Security describes Base Tag Injection as a lesser-known HTML Injection technique where an attacker-controlled <code>&lt;base&gt;</code> element changes how relative URLs in the document are resolved.</p>
+<hr />
+<h1 id="16-relative-urls-and-why-base-matters">16. Relative URLs and Why <code>&lt;base&gt;</code> Matters<a class="headerlink" href="#16-relative-urls-and-why-base-matters" title="Permanent link">&para;</a></h1>
+<p>Suppose a page contains:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-78-1"><a id="__codelineno-78-1" name="__codelineno-78-1" href="#__codelineno-78-1"></a><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"/images/logo.png"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>and:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-79-1"><a id="__codelineno-79-1" name="__codelineno-79-1" href="#__codelineno-79-1"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"/static/app.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>and:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-80-1"><a id="__codelineno-80-1" name="__codelineno-80-1" href="#__codelineno-80-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/account"</span><span class="p">&gt;</span>Account<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Relative references depend on a base URL.</p>
+<p>If an attacker can introduce:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-81-1"><a id="__codelineno-81-1" name="__codelineno-81-1" href="#__codelineno-81-1"></a><span class="p">&lt;</span><span class="nt">base</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://controlled.example/"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>then subsequent relative references may resolve against that origin.</p>
+<p>Conceptually:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-82-1"><a id="__codelineno-82-1" name="__codelineno-82-1" href="#__codelineno-82-1"></a>/static/app.js
+</span></code></pre></div>
+<p>could resolve as:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-83-1"><a id="__codelineno-83-1" name="__codelineno-83-1" href="#__codelineno-83-1"></a>https://controlled.example/static/app.js
+</span></code></pre></div>
+<p>depending on the document and URL structure.</p>
+<p>This is why Base Tag Injection can be much more interesting than simply injecting:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-84-1"><a id="__codelineno-84-1" name="__codelineno-84-1" href="#__codelineno-84-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Punk Security documents possible effects on scripts, stylesheets, links, and images.</p>
+<hr />
+<h2 id="testing-for-base-tag-injection">Testing for Base Tag Injection<a class="headerlink" href="#testing-for-base-tag-injection" title="Permanent link">&para;</a></h2>
+<p>First determine whether:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-85-1"><a id="__codelineno-85-1" name="__codelineno-85-1" href="#__codelineno-85-1"></a><span class="p">&lt;</span><span class="nt">base</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>is accepted.</p>
+<p>Use a harmless base pointing to infrastructure you control or a test domain authorized by the program.</p>
+<p>Example:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-86-1"><a id="__codelineno-86-1" name="__codelineno-86-1" href="#__codelineno-86-1"></a><span class="p">&lt;</span><span class="nt">base</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://controlled.example/"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Then inspect the DOM and browser network requests.</p>
+<p>You are looking for:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-87-1"><a id="__codelineno-87-1" name="__codelineno-87-1" href="#__codelineno-87-1"></a>Relative URL
+</span><span id="__span-87-2"><a id="__codelineno-87-2" name="__codelineno-87-2" href="#__codelineno-87-2"></a>      ↓
+</span><span id="__span-87-3"><a id="__codelineno-87-3" name="__codelineno-87-3" href="#__codelineno-87-3"></a>Unexpected base
+</span><span id="__span-87-4"><a id="__codelineno-87-4" name="__codelineno-87-4" href="#__codelineno-87-4"></a>      ↓
+</span><span id="__span-87-5"><a id="__codelineno-87-5" name="__codelineno-87-5" href="#__codelineno-87-5"></a>Unexpected destination
+</span></code></pre></div>
+<p>Do not use this technique to collect real credentials, authentication tokens, or other users' information.</p>
+<hr />
+<h2 id="csp-defense">CSP Defense<a class="headerlink" href="#csp-defense" title="Permanent link">&para;</a></h2>
+<p>A useful defense is:</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-88-1"><a id="__codelineno-88-1" name="__codelineno-88-1" href="#__codelineno-88-1"></a><span class="err">Content-Security-Policy: base-uri 'self'</span>
+</span></code></pre></div>
+<p>or, depending on the application's architecture:</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-89-1"><a id="__codelineno-89-1" name="__codelineno-89-1" href="#__codelineno-89-1"></a><span class="err">Content-Security-Policy: base-uri 'none'</span>
+</span></code></pre></div>
+<p>Punk Security specifically highlights the CSP <code>base-uri</code> directive as a defense against Base Tag Injection.</p>
+<p>Invicti also notes that CSP can mitigate some Base Tag Injection scenarios but should not be treated as a complete defense against HTML Injection.</p>
+<hr />
+<h1 id="17-dom-based-html-injection">17. DOM-Based HTML Injection<a class="headerlink" href="#17-dom-based-html-injection" title="Permanent link">&para;</a></h1>
+<p>DOM-based HTML Injection occurs when JavaScript takes attacker-controlled data and inserts it into an HTML sink.</p>
+<p>Dangerous examples include:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-90-1"><a id="__codelineno-90-1" name="__codelineno-90-1" href="#__codelineno-90-1"></a><span class="nx">element</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">userInput</span><span class="p">;</span>
+</span></code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-91-1"><a id="__codelineno-91-1" name="__codelineno-91-1" href="#__codelineno-91-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">userInput</span><span class="p">);</span>
+</span></code></pre></div>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-92-1"><a id="__codelineno-92-1" name="__codelineno-92-1" href="#__codelineno-92-1"></a><span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span><span class="p">(</span><span class="nx">userInput</span><span class="p">);</span>
+</span></code></pre></div>
+<p>OWASP specifically identifies <code>innerHTML</code> and <code>document.write()</code> as potentially dangerous when untrusted data is used without appropriate protection.</p>
+<hr />
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<p>Vulnerable:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-93-1"><a id="__codelineno-93-1" name="__codelineno-93-1" href="#__codelineno-93-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mf">6</span><span class="p">);</span>
+</span><span id="__span-93-2"><a id="__codelineno-93-2" name="__codelineno-93-2" href="#__codelineno-93-2"></a>
+</span><span id="__span-93-3"><a id="__codelineno-93-3" name="__codelineno-93-3" href="#__codelineno-93-3"></a><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">"welcome"</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span>
+</span><span id="__span-93-4"><a id="__codelineno-93-4" name="__codelineno-93-4" href="#__codelineno-93-4"></a><span class="w">    </span><span class="s2">"Hello "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="p">;</span>
+</span></code></pre></div>
+<p>Request:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-94-1"><a id="__codelineno-94-1" name="__codelineno-94-1" href="#__codelineno-94-1"></a>?page?name=&lt;b&gt;TEST&lt;/b&gt;
+</span></code></pre></div>
+<p>Potential result:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-95-1"><a id="__codelineno-95-1" name="__codelineno-95-1" href="#__codelineno-95-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"welcome"</span><span class="p">&gt;</span>
+</span><span id="__span-95-2"><a id="__codelineno-95-2" name="__codelineno-95-2" href="#__codelineno-95-2"></a>    Hello <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span><span id="__span-95-3"><a id="__codelineno-95-3" name="__codelineno-95-3" href="#__codelineno-95-3"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The server does not necessarily need to reflect the value.</p>
+<p>The browser-side JavaScript creates the vulnerability.</p>
+<hr />
+<h1 id="18-stored-html-injection">18. Stored HTML Injection<a class="headerlink" href="#18-stored-html-injection" title="Permanent link">&para;</a></h1>
+<p>Stored injection deserves special attention in bug bounty programs.</p>
+<p>Typical flow:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-96-1"><a id="__codelineno-96-1" name="__codelineno-96-1" href="#__codelineno-96-1"></a>Attacker
+</span><span id="__span-96-2"><a id="__codelineno-96-2" name="__codelineno-96-2" href="#__codelineno-96-2"></a>   |
+</span><span id="__span-96-3"><a id="__codelineno-96-3" name="__codelineno-96-3" href="#__codelineno-96-3"></a>   v
+</span><span id="__span-96-4"><a id="__codelineno-96-4" name="__codelineno-96-4" href="#__codelineno-96-4"></a>Input
+</span><span id="__span-96-5"><a id="__codelineno-96-5" name="__codelineno-96-5" href="#__codelineno-96-5"></a>   |
+</span><span id="__span-96-6"><a id="__codelineno-96-6" name="__codelineno-96-6" href="#__codelineno-96-6"></a>   v
+</span><span id="__span-96-7"><a id="__codelineno-96-7" name="__codelineno-96-7" href="#__codelineno-96-7"></a>Application
+</span><span id="__span-96-8"><a id="__codelineno-96-8" name="__codelineno-96-8" href="#__codelineno-96-8"></a>   |
+</span><span id="__span-96-9"><a id="__codelineno-96-9" name="__codelineno-96-9" href="#__codelineno-96-9"></a>   v
+</span><span id="__span-96-10"><a id="__codelineno-96-10" name="__codelineno-96-10" href="#__codelineno-96-10"></a>Database
+</span><span id="__span-96-11"><a id="__codelineno-96-11" name="__codelineno-96-11" href="#__codelineno-96-11"></a>   |
+</span><span id="__span-96-12"><a id="__codelineno-96-12" name="__codelineno-96-12" href="#__codelineno-96-12"></a>   v
+</span><span id="__span-96-13"><a id="__codelineno-96-13" name="__codelineno-96-13" href="#__codelineno-96-13"></a>Victim visits page
+</span><span id="__span-96-14"><a id="__codelineno-96-14" name="__codelineno-96-14" href="#__codelineno-96-14"></a>   |
+</span><span id="__span-96-15"><a id="__codelineno-96-15" name="__codelineno-96-15" href="#__codelineno-96-15"></a>   v
+</span><span id="__span-96-16"><a id="__codelineno-96-16" name="__codelineno-96-16" href="#__codelineno-96-16"></a>Injected HTML rendered
+</span></code></pre></div>
+<p>Examples:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-97-1"><a id="__codelineno-97-1" name="__codelineno-97-1" href="#__codelineno-97-1"></a>Profile name
+</span><span id="__span-97-2"><a id="__codelineno-97-2" name="__codelineno-97-2" href="#__codelineno-97-2"></a>Comment
+</span><span id="__span-97-3"><a id="__codelineno-97-3" name="__codelineno-97-3" href="#__codelineno-97-3"></a>Project description
+</span><span id="__span-97-4"><a id="__codelineno-97-4" name="__codelineno-97-4" href="#__codelineno-97-4"></a>Support ticket
+</span><span id="__span-97-5"><a id="__codelineno-97-5" name="__codelineno-97-5" href="#__codelineno-97-5"></a>Organization name
+</span><span id="__span-97-6"><a id="__codelineno-97-6" name="__codelineno-97-6" href="#__codelineno-97-6"></a>Team name
+</span><span id="__span-97-7"><a id="__codelineno-97-7" name="__codelineno-97-7" href="#__codelineno-97-7"></a>Document title
+</span></code></pre></div>
+<hr />
+<h2 id="stored-injection-testing-method">Stored Injection Testing Method<a class="headerlink" href="#stored-injection-testing-method" title="Permanent link">&para;</a></h2>
+<h3 id="step-1">Step 1<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
+<p>Choose a harmless marker:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-98-1"><a id="__codelineno-98-1" name="__codelineno-98-1" href="#__codelineno-98-1"></a>HTML-STORED-123
+</span></code></pre></div>
+<h3 id="step-2">Step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
+<p>Submit it.</p>
+<h3 id="step-3">Step 3<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
+<p>Navigate away.</p>
+<h3 id="step-4">Step 4<a class="headerlink" href="#step-4" title="Permanent link">&para;</a></h3>
+<p>Return to the page.</p>
+<h3 id="step-5">Step 5<a class="headerlink" href="#step-5" title="Permanent link">&para;</a></h3>
+<p>Check whether it remains.</p>
+<h3 id="step-6">Step 6<a class="headerlink" href="#step-6" title="Permanent link">&para;</a></h3>
+<p>Test harmless HTML:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-99-1"><a id="__codelineno-99-1" name="__codelineno-99-1" href="#__codelineno-99-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>HTML-STORED-123<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<h3 id="step-7">Step 7<a class="headerlink" href="#step-7" title="Permanent link">&para;</a></h3>
+<p>Check whether another account sees it.</p>
+<p>Only test cross-user behavior when explicitly permitted by the program.</p>
+<hr />
+<h1 id="19-reflected-html-injection">19. Reflected HTML Injection<a class="headerlink" href="#19-reflected-html-injection" title="Permanent link">&para;</a></h1>
+<p>Reflected injection usually looks like:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-100-1"><a id="__codelineno-100-1" name="__codelineno-100-1" href="#__codelineno-100-1"></a>GET /search?q=PAYLOAD
+</span></code></pre></div>
+<p>and:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-101-1"><a id="__codelineno-101-1" name="__codelineno-101-1" href="#__codelineno-101-1"></a><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Search results for PAYLOAD<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The important characteristic is:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-102-1"><a id="__codelineno-102-1" name="__codelineno-102-1" href="#__codelineno-102-1"></a>Request
+</span><span id="__span-102-2"><a id="__codelineno-102-2" name="__codelineno-102-2" href="#__codelineno-102-2"></a>  ↓
+</span><span id="__span-102-3"><a id="__codelineno-102-3" name="__codelineno-102-3" href="#__codelineno-102-3"></a>Server
+</span><span id="__span-102-4"><a id="__codelineno-102-4" name="__codelineno-102-4" href="#__codelineno-102-4"></a>  ↓
+</span><span id="__span-102-5"><a id="__codelineno-102-5" name="__codelineno-102-5" href="#__codelineno-102-5"></a>Response
+</span><span id="__span-102-6"><a id="__codelineno-102-6" name="__codelineno-102-6" href="#__codelineno-102-6"></a>  ↓
+</span><span id="__span-102-7"><a id="__codelineno-102-7" name="__codelineno-102-7" href="#__codelineno-102-7"></a>Browser
+</span></code></pre></div>
+<p>The payload is not necessarily stored.</p>
+<hr />
+<h2 id="reflected-injection-checklist">Reflected Injection Checklist<a class="headerlink" href="#reflected-injection-checklist" title="Permanent link">&para;</a></h2>
+<p>For every parameter:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-103-1"><a id="__codelineno-103-1" name="__codelineno-103-1" href="#__codelineno-103-1"></a>Does my value appear in the response?
+</span><span id="__span-103-2"><a id="__codelineno-103-2" name="__codelineno-103-2" href="#__codelineno-103-2"></a>        |
+</span><span id="__span-103-3"><a id="__codelineno-103-3" name="__codelineno-103-3" href="#__codelineno-103-3"></a>        +-- No → probably not reflected here
+</span><span id="__span-103-4"><a id="__codelineno-103-4" name="__codelineno-103-4" href="#__codelineno-103-4"></a>        |
+</span><span id="__span-103-5"><a id="__codelineno-103-5" name="__codelineno-103-5" href="#__codelineno-103-5"></a>        +-- Yes
+</span><span id="__span-103-6"><a id="__codelineno-103-6" name="__codelineno-103-6" href="#__codelineno-103-6"></a>             |
+</span><span id="__span-103-7"><a id="__codelineno-103-7" name="__codelineno-103-7" href="#__codelineno-103-7"></a>             v
+</span><span id="__span-103-8"><a id="__codelineno-103-8" name="__codelineno-103-8" href="#__codelineno-103-8"></a>Where does it appear?
+</span><span id="__span-103-9"><a id="__codelineno-103-9" name="__codelineno-103-9" href="#__codelineno-103-9"></a>             |
+</span><span id="__span-103-10"><a id="__codelineno-103-10" name="__codelineno-103-10" href="#__codelineno-103-10"></a>             +-- HTML text
+</span><span id="__span-103-11"><a id="__codelineno-103-11" name="__codelineno-103-11" href="#__codelineno-103-11"></a>             +-- Attribute
+</span><span id="__span-103-12"><a id="__codelineno-103-12" name="__codelineno-103-12" href="#__codelineno-103-12"></a>             +-- URL
+</span><span id="__span-103-13"><a id="__codelineno-103-13" name="__codelineno-103-13" href="#__codelineno-103-13"></a>             +-- JavaScript
+</span><span id="__span-103-14"><a id="__codelineno-103-14" name="__codelineno-103-14" href="#__codelineno-103-14"></a>             +-- CSS
+</span></code></pre></div>
+<p>This workflow is far more useful than blindly trying payload lists.</p>
+<hr />
+<h1 id="20-html-injection-through-apis">20. HTML Injection Through APIs<a class="headerlink" href="#20-html-injection-through-apis" title="Permanent link">&para;</a></h1>
+<p>Modern bug hunters should pay special attention to APIs.</p>
+<p>Imagine:</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-104-1"><a id="__codelineno-104-1" name="__codelineno-104-1" href="#__codelineno-104-1"></a><span class="err">PUT /api/profile</span>
+</span><span id="__span-104-2"><a id="__codelineno-104-2" name="__codelineno-104-2" href="#__codelineno-104-2"></a><span class="err">Content-Type: application/json</span>
+</span></code></pre></div>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-105-1"><a id="__codelineno-105-1" name="__codelineno-105-1" href="#__codelineno-105-1"></a><span class="p">{</span>
+</span><span id="__span-105-2"><a id="__codelineno-105-2" name="__codelineno-105-2" href="#__codelineno-105-2"></a><span class="w">  </span><span class="nt">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;b&gt;TEST&lt;/b&gt;"</span>
+</span><span id="__span-105-3"><a id="__codelineno-105-3" name="__codelineno-105-3" href="#__codelineno-105-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The API may respond:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-106-1"><a id="__codelineno-106-1" name="__codelineno-106-1" href="#__codelineno-106-1"></a><span class="p">{</span>
+</span><span id="__span-106-2"><a id="__codelineno-106-2" name="__codelineno-106-2" href="#__codelineno-106-2"></a><span class="w">  </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+</span><span id="__span-106-3"><a id="__codelineno-106-3" name="__codelineno-106-3" href="#__codelineno-106-3"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>This does not prove there is no vulnerability.</p>
+<p>The value may be stored and later displayed:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-107-1"><a id="__codelineno-107-1" name="__codelineno-107-1" href="#__codelineno-107-1"></a>Profile
+</span><span id="__span-107-2"><a id="__codelineno-107-2" name="__codelineno-107-2" href="#__codelineno-107-2"></a>Admin panel
+</span><span id="__span-107-3"><a id="__codelineno-107-3" name="__codelineno-107-3" href="#__codelineno-107-3"></a>Team members
+</span><span id="__span-107-4"><a id="__codelineno-107-4" name="__codelineno-107-4" href="#__codelineno-107-4"></a>Comments
+</span><span id="__span-107-5"><a id="__codelineno-107-5" name="__codelineno-107-5" href="#__codelineno-107-5"></a>Notifications
+</span><span id="__span-107-6"><a id="__codelineno-107-6" name="__codelineno-107-6" href="#__codelineno-107-6"></a>Email templates
+</span><span id="__span-107-7"><a id="__codelineno-107-7" name="__codelineno-107-7" href="#__codelineno-107-7"></a>Audit logs
+</span></code></pre></div>
+<p>Therefore:</p>
+<blockquote>
+<p>Always follow data through the application.</p>
+</blockquote>
+<p>A value that appears harmless in an API response may become dangerous when another frontend renders it.</p>
+<hr />
+<h1 id="21-html-injection-in-modern-applications">21. HTML Injection in Modern Applications<a class="headerlink" href="#21-html-injection-in-modern-applications" title="Permanent link">&para;</a></h1>
+<p>Modern applications frequently use:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-108-1"><a id="__codelineno-108-1" name="__codelineno-108-1" href="#__codelineno-108-1"></a>React
+</span><span id="__span-108-2"><a id="__codelineno-108-2" name="__codelineno-108-2" href="#__codelineno-108-2"></a>Vue
+</span><span id="__span-108-3"><a id="__codelineno-108-3" name="__codelineno-108-3" href="#__codelineno-108-3"></a>Angular
+</span><span id="__span-108-4"><a id="__codelineno-108-4" name="__codelineno-108-4" href="#__codelineno-108-4"></a>Svelte
+</span><span id="__span-108-5"><a id="__codelineno-108-5" name="__codelineno-108-5" href="#__codelineno-108-5"></a>Next.js
+</span><span id="__span-108-6"><a id="__codelineno-108-6" name="__codelineno-108-6" href="#__codelineno-108-6"></a>Nuxt
+</span><span id="__span-108-7"><a id="__codelineno-108-7" name="__codelineno-108-7" href="#__codelineno-108-7"></a>jQuery
+</span><span id="__span-108-8"><a id="__codelineno-108-8" name="__codelineno-108-8" href="#__codelineno-108-8"></a>Custom JavaScript
+</span><span id="__span-108-9"><a id="__codelineno-108-9" name="__codelineno-108-9" href="#__codelineno-108-9"></a>Server-side templates
+</span></code></pre></div>
+<p>Frameworks can provide automatic escaping, but developers can still introduce dangerous behavior.</p>
+<p>Pay attention to:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-109-1"><a id="__codelineno-109-1" name="__codelineno-109-1" href="#__codelineno-109-1"></a><span class="nx">innerHTML</span>
+</span><span id="__span-109-2"><a id="__codelineno-109-2" name="__codelineno-109-2" href="#__codelineno-109-2"></a><span class="nx">outerHTML</span>
+</span><span id="__span-109-3"><a id="__codelineno-109-3" name="__codelineno-109-3" href="#__codelineno-109-3"></a><span class="nx">insertAdjacentHTML</span>
+</span><span id="__span-109-4"><a id="__codelineno-109-4" name="__codelineno-109-4" href="#__codelineno-109-4"></a><span class="nb">document</span><span class="p">.</span><span class="nx">write</span>
+</span></code></pre></div>
+<p>and framework-specific raw HTML features.</p>
+<p>For example, React has mechanisms for intentionally rendering raw HTML.</p>
+<p>The important question is not:</p>
+<blockquote>
+<p>"Is this React?"</p>
+</blockquote>
+<p>The important question is:</p>
+<blockquote>
+<p>"Where does this value eventually become HTML?"</p>
+</blockquote>
+<hr />
+<h1 id="22-testing-methodology-with-burp-suite">22. Testing Methodology With Burp Suite<a class="headerlink" href="#22-testing-methodology-with-burp-suite" title="Permanent link">&para;</a></h1>
+<p>Burp Suite is extremely useful for HTML Injection testing.</p>
+<p>A simple workflow:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-110-1"><a id="__codelineno-110-1" name="__codelineno-110-1" href="#__codelineno-110-1"></a>Browser
+</span><span id="__span-110-2"><a id="__codelineno-110-2" name="__codelineno-110-2" href="#__codelineno-110-2"></a>   |
+</span><span id="__span-110-3"><a id="__codelineno-110-3" name="__codelineno-110-3" href="#__codelineno-110-3"></a>   v
+</span><span id="__span-110-4"><a id="__codelineno-110-4" name="__codelineno-110-4" href="#__codelineno-110-4"></a>Burp Proxy
+</span><span id="__span-110-5"><a id="__codelineno-110-5" name="__codelineno-110-5" href="#__codelineno-110-5"></a>   |
+</span><span id="__span-110-6"><a id="__codelineno-110-6" name="__codelineno-110-6" href="#__codelineno-110-6"></a>   v
+</span><span id="__span-110-7"><a id="__codelineno-110-7" name="__codelineno-110-7" href="#__codelineno-110-7"></a>Application
+</span></code></pre></div>
+<hr />
+<h2 id="step-1-find-an-input">Step 1 — Find an Input<a class="headerlink" href="#step-1-find-an-input" title="Permanent link">&para;</a></h2>
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-111-1"><a id="__codelineno-111-1" name="__codelineno-111-1" href="#__codelineno-111-1"></a>GET /search?q=test
+</span></code></pre></div>
+<hr />
+<h2 id="step-2-send-to-repeater">Step 2 — Send to Repeater<a class="headerlink" href="#step-2-send-to-repeater" title="Permanent link">&para;</a></h2>
+<p>Right-click:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-112-1"><a id="__codelineno-112-1" name="__codelineno-112-1" href="#__codelineno-112-1"></a>Send to Repeater
+</span></code></pre></div>
+<hr />
+<h2 id="step-3-change-the-value">Step 3 — Change the Value<a class="headerlink" href="#step-3-change-the-value" title="Permanent link">&para;</a></h2>
+<p>Start:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-113-1"><a id="__codelineno-113-1" name="__codelineno-113-1" href="#__codelineno-113-1"></a>test
+</span></code></pre></div>
+<p>to:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-114-1"><a id="__codelineno-114-1" name="__codelineno-114-1" href="#__codelineno-114-1"></a>HTMLTEST123
+</span></code></pre></div>
+<p>Send the request.</p>
+<hr />
+<h2 id="step-4-search-the-response">Step 4 — Search the Response<a class="headerlink" href="#step-4-search-the-response" title="Permanent link">&para;</a></h2>
+<p>Use:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-115-1"><a id="__codelineno-115-1" name="__codelineno-115-1" href="#__codelineno-115-1"></a>HTMLTEST123
+</span></code></pre></div>
+<p>Find where it appears.</p>
+<hr />
+<h2 id="step-5-test-html">Step 5 — Test HTML<a class="headerlink" href="#step-5-test-html" title="Permanent link">&para;</a></h2>
+<p>Try:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-116-1"><a id="__codelineno-116-1" name="__codelineno-116-1" href="#__codelineno-116-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>HTMLTEST123<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="step-6-inspect-the-rendered-result">Step 6 — Inspect the Rendered Result<a class="headerlink" href="#step-6-inspect-the-rendered-result" title="Permanent link">&para;</a></h2>
+<p>Do not rely only on the raw HTTP response.</p>
+<p>Check:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-117-1"><a id="__codelineno-117-1" name="__codelineno-117-1" href="#__codelineno-117-1"></a>Response
+</span><span id="__span-117-2"><a id="__codelineno-117-2" name="__codelineno-117-2" href="#__codelineno-117-2"></a>DOM
+</span><span id="__span-117-3"><a id="__codelineno-117-3" name="__codelineno-117-3" href="#__codelineno-117-3"></a>Rendered page
+</span><span id="__span-117-4"><a id="__codelineno-117-4" name="__codelineno-117-4" href="#__codelineno-117-4"></a>Browser behavior
+</span><span id="__span-117-5"><a id="__codelineno-117-5" name="__codelineno-117-5" href="#__codelineno-117-5"></a>Network requests
+</span></code></pre></div>
+<hr />
+<h1 id="23-finding-the-injection-context">23. Finding the Injection Context<a class="headerlink" href="#23-finding-the-injection-context" title="Permanent link">&para;</a></h1>
+<p>This is the workflow I recommend for beginners.</p>
+<p>Suppose your marker is:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-118-1"><a id="__codelineno-118-1" name="__codelineno-118-1" href="#__codelineno-118-1"></a>INJECT123
+</span></code></pre></div>
+<p>You find:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-119-1"><a id="__codelineno-119-1" name="__codelineno-119-1" href="#__codelineno-119-1"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"result"</span><span class="p">&gt;</span>
+</span><span id="__span-119-2"><a id="__codelineno-119-2" name="__codelineno-119-2" href="#__codelineno-119-2"></a>    INJECT123
+</span><span id="__span-119-3"><a id="__codelineno-119-3" name="__codelineno-119-3" href="#__codelineno-119-3"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Context:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-120-1"><a id="__codelineno-120-1" name="__codelineno-120-1" href="#__codelineno-120-1"></a>HTML BODY
+</span></code></pre></div>
+<p>Now imagine:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-121-1"><a id="__codelineno-121-1" name="__codelineno-121-1" href="#__codelineno-121-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="s">"INJECT123"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Context:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-122-1"><a id="__codelineno-122-1" name="__codelineno-122-1" href="#__codelineno-122-1"></a>ATTRIBUTE
+</span></code></pre></div>
+<p>Another example:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-123-1"><a id="__codelineno-123-1" name="__codelineno-123-1" href="#__codelineno-123-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/search?q=INJECT123"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Context:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-124-1"><a id="__codelineno-124-1" name="__codelineno-124-1" href="#__codelineno-124-1"></a>URL ATTRIBUTE
+</span></code></pre></div>
+<p>Another:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-125-1"><a id="__codelineno-125-1" name="__codelineno-125-1" href="#__codelineno-125-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span><span id="__span-125-2"><a id="__codelineno-125-2" name="__codelineno-125-2" href="#__codelineno-125-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"INJECT123"</span><span class="p">;</span>
+</span><span id="__span-125-3"><a id="__codelineno-125-3" name="__codelineno-125-3" href="#__codelineno-125-3"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Context:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-126-1"><a id="__codelineno-126-1" name="__codelineno-126-1" href="#__codelineno-126-1"></a>JAVASCRIPT
+</span></code></pre></div>
+<p>Do not use the same payload for every context.</p>
+<hr />
+<h1 id="24-understanding-encoding">24. Understanding Encoding<a class="headerlink" href="#24-understanding-encoding" title="Permanent link">&para;</a></h1>
+<p>Encoding is one of the most important concepts in web security.</p>
+<p>Suppose the application receives:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-127-1"><a id="__codelineno-127-1" name="__codelineno-127-1" href="#__codelineno-127-1"></a>&lt;b&gt;TEST&lt;/b&gt;
+</span></code></pre></div>
+<p>and outputs:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-128-1"><a id="__codelineno-128-1" name="__codelineno-128-1" href="#__codelineno-128-1"></a><span class="ni">&amp;lt;</span>b<span class="ni">&amp;gt;</span>TEST<span class="ni">&amp;lt;</span>/b<span class="ni">&amp;gt;</span>
+</span></code></pre></div>
+<p>The browser displays:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-129-1"><a id="__codelineno-129-1" name="__codelineno-129-1" href="#__codelineno-129-1"></a>&lt;b&gt;TEST&lt;/b&gt;
+</span></code></pre></div>
+<p>as text.</p>
+<p>The browser does not interpret it as a <code>&lt;b&gt;</code> element in that HTML text context.</p>
+<p>OWASP recommends context-specific output encoding rather than applying one generic encoding strategy everywhere.</p>
+<hr />
+<h1 id="25-html-entity-encoding">25. HTML Entity Encoding<a class="headerlink" href="#25-html-entity-encoding" title="Permanent link">&para;</a></h1>
+<p>Important characters include:</p>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>HTML Encoding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&amp;</code></td>
+<td><code>&amp;amp;</code></td>
+</tr>
+<tr>
+<td><code>&lt;</code></td>
+<td><code>&amp;lt;</code></td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td><code>&amp;gt;</code></td>
+</tr>
+<tr>
+<td><code>"</code></td>
+<td><code>&amp;quot;</code></td>
+</tr>
+<tr>
+<td><code>'</code></td>
+<td><code>&amp;#x27;</code></td>
+</tr>
+</tbody>
+</table>
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-130-1"><a id="__codelineno-130-1" name="__codelineno-130-1" href="#__codelineno-130-1"></a>&lt;b&gt;TEST&lt;/b&gt;
+</span></code></pre></div>
+<p>becomes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-131-1"><a id="__codelineno-131-1" name="__codelineno-131-1" href="#__codelineno-131-1"></a>&amp;lt;b&amp;gt;TEST&amp;lt;/b&amp;gt;
+</span></code></pre></div>
+<p>OWASP documents HTML entity encoding as the appropriate technique for values inserted into ordinary HTML contexts.</p>
+<hr />
+<h1 id="26-filter-and-waf-testing">26. Filter and WAF Testing<a class="headerlink" href="#26-filter-and-waf-testing" title="Permanent link">&para;</a></h1>
+<p>Many beginner hunters make this mistake:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-132-1"><a id="__codelineno-132-1" name="__codelineno-132-1" href="#__codelineno-132-1"></a>&lt;script&gt;...&lt;/script&gt;
+</span></code></pre></div>
+<p>gets blocked.</p>
+<p>They conclude:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-133-1"><a id="__codelineno-133-1" name="__codelineno-133-1" href="#__codelineno-133-1"></a>Not vulnerable.
+</span></code></pre></div>
+<p>That is not necessarily correct.</p>
+<p>A filter may block one pattern while allowing HTML Injection.</p>
+<p>For example:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-134-1"><a id="__codelineno-134-1" name="__codelineno-134-1" href="#__codelineno-134-1"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>might be rejected while:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-135-1"><a id="__codelineno-135-1" name="__codelineno-135-1" href="#__codelineno-135-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>still works.</p>
+<p>Qualys specifically discusses weak filters that look for obvious strings such as <code>&lt;script&gt;</code> or <code>alert</code>, while other HTML structures remain injectable.</p>
+<hr />
+<h2 id="what-to-test">What to Test<a class="headerlink" href="#what-to-test" title="Permanent link">&para;</a></h2>
+<p>Instead of testing only one payload, test categories:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-136-1"><a id="__codelineno-136-1" name="__codelineno-136-1" href="#__codelineno-136-1"></a>Simple element
+</span><span id="__span-136-2"><a id="__codelineno-136-2" name="__codelineno-136-2" href="#__codelineno-136-2"></a>Attribute
+</span><span id="__span-136-3"><a id="__codelineno-136-3" name="__codelineno-136-3" href="#__codelineno-136-3"></a>Closing tag
+</span><span id="__span-136-4"><a id="__codelineno-136-4" name="__codelineno-136-4" href="#__codelineno-136-4"></a>Quote
+</span><span id="__span-136-5"><a id="__codelineno-136-5" name="__codelineno-136-5" href="#__codelineno-136-5"></a>HTML entity
+</span><span id="__span-136-6"><a id="__codelineno-136-6" name="__codelineno-136-6" href="#__codelineno-136-6"></a>URL
+</span><span id="__span-136-7"><a id="__codelineno-136-7" name="__codelineno-136-7" href="#__codelineno-136-7"></a>Form
+</span><span id="__span-136-8"><a id="__codelineno-136-8" name="__codelineno-136-8" href="#__codelineno-136-8"></a>Base
+</span></code></pre></div>
+<p>Your objective is to understand:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-137-1"><a id="__codelineno-137-1" name="__codelineno-137-1" href="#__codelineno-137-1"></a>What characters are encoded?
+</span><span id="__span-137-2"><a id="__codelineno-137-2" name="__codelineno-137-2" href="#__codelineno-137-2"></a>What tags are allowed?
+</span><span id="__span-137-3"><a id="__codelineno-137-3" name="__codelineno-137-3" href="#__codelineno-137-3"></a>What attributes are allowed?
+</span><span id="__span-137-4"><a id="__codelineno-137-4" name="__codelineno-137-4" href="#__codelineno-137-4"></a>Is input transformed?
+</span><span id="__span-137-5"><a id="__codelineno-137-5" name="__codelineno-137-5" href="#__codelineno-137-5"></a>Is it stripped?
+</span><span id="__span-137-6"><a id="__codelineno-137-6" name="__codelineno-137-6" href="#__codelineno-137-6"></a>Is it stored?
+</span><span id="__span-137-7"><a id="__codelineno-137-7" name="__codelineno-137-7" href="#__codelineno-137-7"></a>Does the browser parse it differently?
+</span></code></pre></div>
+<hr />
+<h1 id="27-common-developer-mistakes">27. Common Developer Mistakes<a class="headerlink" href="#27-common-developer-mistakes" title="Permanent link">&para;</a></h1>
+<h2 id="mistake-1-string-concatenation">Mistake 1 — String concatenation<a class="headerlink" href="#mistake-1-string-concatenation" title="Permanent link">&para;</a></h2>
+<p>Example:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-138-1"><a id="__codelineno-138-1" name="__codelineno-138-1" href="#__codelineno-138-1"></a><span class="nx">output</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"&lt;div&gt;"</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">username</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">"&lt;/div&gt;"</span><span class="p">;</span>
+</span></code></pre></div>
+<p>If <code>username</code> is untrusted, this can be dangerous.</p>
+<hr />
+<h2 id="mistake-2-trusting-client-side-validation">Mistake 2 — Trusting client-side validation<a class="headerlink" href="#mistake-2-trusting-client-side-validation" title="Permanent link">&para;</a></h2>
+<p>JavaScript may say:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-139-1"><a id="__codelineno-139-1" name="__codelineno-139-1" href="#__codelineno-139-1"></a>Invalid characters!
+</span></code></pre></div>
+<p>But the server might accept them directly.</p>
+<p>Always test the actual HTTP request.</p>
+<hr />
+<h2 id="mistake-3-blacklisting-script">Mistake 3 — Blacklisting <code>&lt;script&gt;</code><a class="headerlink" href="#mistake-3-blacklisting-script" title="Permanent link">&para;</a></h2>
+<p>Blocking:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-140-1"><a id="__codelineno-140-1" name="__codelineno-140-1" href="#__codelineno-140-1"></a>&lt;script&gt;
+</span></code></pre></div>
+<p>does not solve HTML Injection.</p>
+<p>HTML contains hundreds of elements and attributes.</p>
+<hr />
+<h2 id="mistake-4-encoding-only-some-characters">Mistake 4 — Encoding only some characters<a class="headerlink" href="#mistake-4-encoding-only-some-characters" title="Permanent link">&para;</a></h2>
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-141-1"><a id="__codelineno-141-1" name="__codelineno-141-1" href="#__codelineno-141-1"></a>&lt; encoded
+</span><span id="__span-141-2"><a id="__codelineno-141-2" name="__codelineno-141-2" href="#__codelineno-141-2"></a>&gt; encoded
+</span><span id="__span-141-3"><a id="__codelineno-141-3" name="__codelineno-141-3" href="#__codelineno-141-3"></a>" not encoded
+</span></code></pre></div>
+<p>An attribute context may still be vulnerable.</p>
+<hr />
+<h2 id="mistake-5-encoding-too-early">Mistake 5 — Encoding too early<a class="headerlink" href="#mistake-5-encoding-too-early" title="Permanent link">&para;</a></h2>
+<p>Encoding should be appropriate for the final output context.</p>
+<p>OWASP and PortSwigger both emphasize context-specific output encoding.</p>
+<hr />
+<h1 id="28-impact-assessment">28. Impact Assessment<a class="headerlink" href="#28-impact-assessment" title="Permanent link">&para;</a></h1>
+<p>HTML Injection can have different impacts.</p>
+<h2 id="low-impact-example">Low-impact example<a class="headerlink" href="#low-impact-example" title="Permanent link">&para;</a></h2>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-142-1"><a id="__codelineno-142-1" name="__codelineno-142-1" href="#__codelineno-142-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Injected<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Only changes visual formatting.</p>
+<hr />
+<h2 id="higher-impact-example">Higher-impact example<a class="headerlink" href="#higher-impact-example" title="Permanent link">&para;</a></h2>
+<p>Stored HTML changes a public page:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-143-1"><a id="__codelineno-143-1" name="__codelineno-143-1" href="#__codelineno-143-1"></a>Defacement
+</span><span id="__span-143-2"><a id="__codelineno-143-2" name="__codelineno-143-2" href="#__codelineno-143-2"></a>False content
+</span><span id="__span-143-3"><a id="__codelineno-143-3" name="__codelineno-143-3" href="#__codelineno-143-3"></a>Fake announcements
+</span></code></pre></div>
+<hr />
+<h2 id="higher-impact-example_1">Higher-impact example<a class="headerlink" href="#higher-impact-example_1" title="Permanent link">&para;</a></h2>
+<p>An attacker can inject:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-144-1"><a id="__codelineno-144-1" name="__codelineno-144-1" href="#__codelineno-144-1"></a><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>and create a convincing fake interface.</p>
+<hr />
+<h2 id="higher-impact-example_2">Higher-impact example<a class="headerlink" href="#higher-impact-example_2" title="Permanent link">&para;</a></h2>
+<p>Base Tag Injection changes where relative resources resolve.</p>
+<hr />
+<h2 id="potential-escalation">Potential escalation<a class="headerlink" href="#potential-escalation" title="Permanent link">&para;</a></h2>
+<p>HTML Injection can sometimes become:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-145-1"><a id="__codelineno-145-1" name="__codelineno-145-1" href="#__codelineno-145-1"></a>HTML Injection
+</span><span id="__span-145-2"><a id="__codelineno-145-2" name="__codelineno-145-2" href="#__codelineno-145-2"></a>      ↓
+</span><span id="__span-145-3"><a id="__codelineno-145-3" name="__codelineno-145-3" href="#__codelineno-145-3"></a>DOM manipulation
+</span><span id="__span-145-4"><a id="__codelineno-145-4" name="__codelineno-145-4" href="#__codelineno-145-4"></a>      ↓
+</span><span id="__span-145-5"><a id="__codelineno-145-5" name="__codelineno-145-5" href="#__codelineno-145-5"></a>Resource loading
+</span><span id="__span-145-6"><a id="__codelineno-145-6" name="__codelineno-145-6" href="#__codelineno-145-6"></a>      ↓
+</span><span id="__span-145-7"><a id="__codelineno-145-7" name="__codelineno-145-7" href="#__codelineno-145-7"></a>Script execution
+</span><span id="__span-145-8"><a id="__codelineno-145-8" name="__codelineno-145-8" href="#__codelineno-145-8"></a>      ↓
+</span><span id="__span-145-9"><a id="__codelineno-145-9" name="__codelineno-145-9" href="#__codelineno-145-9"></a>XSS
+</span></code></pre></div>
+<p>But you must prove each step.</p>
+<p>Do not automatically claim the highest possible impact.</p>
+<hr />
+<h1 id="29-when-html-injection-becomes-xss">29. When HTML Injection Becomes XSS<a class="headerlink" href="#29-when-html-injection-becomes-xss" title="Permanent link">&para;</a></h1>
+<p>This distinction matters greatly in bug bounty reports.</p>
+<p>Suppose:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-146-1"><a id="__codelineno-146-1" name="__codelineno-146-1" href="#__codelineno-146-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>works.</p>
+<p>That proves:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-147-1"><a id="__codelineno-147-1" name="__codelineno-147-1" href="#__codelineno-147-1"></a>HTML Injection
+</span></code></pre></div>
+<p>It does <strong>not</strong> automatically prove:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-148-1"><a id="__codelineno-148-1" name="__codelineno-148-1" href="#__codelineno-148-1"></a>XSS
+</span></code></pre></div>
+<p>If you discover that the same injection context allows attacker-controlled JavaScript execution, then the vulnerability should generally be evaluated as XSS rather than merely HTML Injection.</p>
+<p>PortSwigger's XSS testing material demonstrates why the exact context determines whether a markup injection can progress into script execution.</p>
+<hr />
+<h1 id="30-html-injection-and-csrf">30. HTML Injection and CSRF<a class="headerlink" href="#30-html-injection-and-csrf" title="Permanent link">&para;</a></h1>
+<p>HTML Injection can sometimes interact with CSRF protections.</p>
+<p>For example, applications often place CSRF tokens inside forms:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-149-1"><a id="__codelineno-149-1" name="__codelineno-149-1" href="#__codelineno-149-1"></a><span class="p">&lt;</span><span class="nt">input</span>
+</span><span id="__span-149-2"><a id="__codelineno-149-2" name="__codelineno-149-2" href="#__codelineno-149-2"></a>    <span class="na">type</span><span class="o">=</span><span class="s">"hidden"</span>
+</span><span id="__span-149-3"><a id="__codelineno-149-3" name="__codelineno-149-3" href="#__codelineno-149-3"></a>    <span class="na">name</span><span class="o">=</span><span class="s">"csrf"</span>
+</span><span id="__span-149-4"><a id="__codelineno-149-4" name="__codelineno-149-4" href="#__codelineno-149-4"></a>    <span class="na">value</span><span class="o">=</span><span class="s">"TOKEN"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>If HTML Injection allows an attacker to manipulate the form structure, the security assumptions around that form may change.</p>
+<p>Invicti documents scenarios where HTML Injection can potentially expose CSRF tokens or facilitate CSRF-related attacks.</p>
+<p>However:</p>
+<blockquote>
+<p>Do not claim "CSRF bypass" simply because HTML Injection exists.</p>
+</blockquote>
+<p>You need to demonstrate the actual security boundary being bypassed.</p>
+<hr />
+<h1 id="31-html-injection-and-password-managers">31. HTML Injection and Password Managers<a class="headerlink" href="#31-html-injection-and-password-managers" title="Permanent link">&para;</a></h1>
+<p>Modern browsers and password managers may interact with HTML forms.</p>
+<p>If an attacker can create or manipulate a form on a trusted origin, browser autofill behavior can become relevant.</p>
+<p>Invicti notes that injected forms can potentially interact with browser password managers depending on the browser, form structure, and autofill behavior.</p>
+<p>For responsible testing:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-150-1"><a id="__codelineno-150-1" name="__codelineno-150-1" href="#__codelineno-150-1"></a>Use test credentials.
+</span><span id="__span-150-2"><a id="__codelineno-150-2" name="__codelineno-150-2" href="#__codelineno-150-2"></a>Never collect real user passwords.
+</span><span id="__span-150-3"><a id="__codelineno-150-3" name="__codelineno-150-3" href="#__codelineno-150-3"></a>Never test against users you do not control.
+</span></code></pre></div>
+<hr />
+<h1 id="32-html-injection-and-phishing">32. HTML Injection and Phishing<a class="headerlink" href="#32-html-injection-and-phishing" title="Permanent link">&para;</a></h1>
+<p>HTML Injection can make an attacker-controlled interface appear inside a trusted origin.</p>
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-151-1"><a id="__codelineno-151-1" name="__codelineno-151-1" href="#__codelineno-151-1"></a>https://target.example/account
+</span></code></pre></div>
+<p>could potentially display attacker-controlled HTML.</p>
+<p>This matters because the browser address bar may still show:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-152-1"><a id="__codelineno-152-1" name="__codelineno-152-1" href="#__codelineno-152-1"></a>target.example
+</span></code></pre></div>
+<p>even though the injected interface is controlled by the attacker.</p>
+<p>Possible consequences include:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-153-1"><a id="__codelineno-153-1" name="__codelineno-153-1" href="#__codelineno-153-1"></a>Fake login forms
+</span><span id="__span-153-2"><a id="__codelineno-153-2" name="__codelineno-153-2" href="#__codelineno-153-2"></a>Fake payment prompts
+</span><span id="__span-153-3"><a id="__codelineno-153-3" name="__codelineno-153-3" href="#__codelineno-153-3"></a>Fake password reset forms
+</span><span id="__span-153-4"><a id="__codelineno-153-4" name="__codelineno-153-4" href="#__codelineno-153-4"></a>Fake security warnings
+</span><span id="__span-153-5"><a id="__codelineno-153-5" name="__codelineno-153-5" href="#__codelineno-153-5"></a>Fake account notifications
+</span></code></pre></div>
+<p>Invicti and CDNetworks both identify phishing, page manipulation, and deceptive content as potential consequences.</p>
+<hr />
+<h1 id="33-how-to-confirm-a-real-vulnerability">33. How to Confirm a Real Vulnerability<a class="headerlink" href="#33-how-to-confirm-a-real-vulnerability" title="Permanent link">&para;</a></h1>
+<p>A good bug hunter should prove three things.</p>
+<h2 id="1-input-control">1. Input Control<a class="headerlink" href="#1-input-control" title="Permanent link">&para;</a></h2>
+<p>Can you control the value?</p>
+<p>Example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-154-1"><a id="__codelineno-154-1" name="__codelineno-154-1" href="#__codelineno-154-1"></a>?q=HTMLTEST
+</span></code></pre></div>
+<hr />
+<h2 id="2-html-interpretation">2. HTML Interpretation<a class="headerlink" href="#2-html-interpretation" title="Permanent link">&para;</a></h2>
+<p>Does the browser interpret your input as HTML?</p>
+<p>Example:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-155-1"><a id="__codelineno-155-1" name="__codelineno-155-1" href="#__codelineno-155-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>HTMLTEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>renders as bold.</p>
+<hr />
+<h2 id="3-security-impact">3. Security Impact<a class="headerlink" href="#3-security-impact" title="Permanent link">&para;</a></h2>
+<p>What can you actually accomplish?</p>
+<p>Possible levels:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-156-1"><a id="__codelineno-156-1" name="__codelineno-156-1" href="#__codelineno-156-1"></a>Visual modification
+</span><span id="__span-156-2"><a id="__codelineno-156-2" name="__codelineno-156-2" href="#__codelineno-156-2"></a>        ↓
+</span><span id="__span-156-3"><a id="__codelineno-156-3" name="__codelineno-156-3" href="#__codelineno-156-3"></a>HTML structure manipulation
+</span><span id="__span-156-4"><a id="__codelineno-156-4" name="__codelineno-156-4" href="#__codelineno-156-4"></a>        ↓
+</span><span id="__span-156-5"><a id="__codelineno-156-5" name="__codelineno-156-5" href="#__codelineno-156-5"></a>User interaction manipulation
+</span><span id="__span-156-6"><a id="__codelineno-156-6" name="__codelineno-156-6" href="#__codelineno-156-6"></a>        ↓
+</span><span id="__span-156-7"><a id="__codelineno-156-7" name="__codelineno-156-7" href="#__codelineno-156-7"></a>Form manipulation
+</span><span id="__span-156-8"><a id="__codelineno-156-8" name="__codelineno-156-8" href="#__codelineno-156-8"></a>        ↓
+</span><span id="__span-156-9"><a id="__codelineno-156-9" name="__codelineno-156-9" href="#__codelineno-156-9"></a>Resource manipulation
+</span><span id="__span-156-10"><a id="__codelineno-156-10" name="__codelineno-156-10" href="#__codelineno-156-10"></a>        ↓
+</span><span id="__span-156-11"><a id="__codelineno-156-11" name="__codelineno-156-11" href="#__codelineno-156-11"></a>Cross-user stored impact
+</span><span id="__span-156-12"><a id="__codelineno-156-12" name="__codelineno-156-12" href="#__codelineno-156-12"></a>        ↓
+</span><span id="__span-156-13"><a id="__codelineno-156-13" name="__codelineno-156-13" href="#__codelineno-156-13"></a>Potential XSS / other escalation
+</span></code></pre></div>
+<p>Report the <strong>highest impact you can demonstrate</strong>, not the highest impact you can imagine.</p>
+<hr />
+<h1 id="34-false-positives">34. False Positives<a class="headerlink" href="#34-false-positives" title="Permanent link">&para;</a></h1>
+<p>Finding your payload in the response is not enough.</p>
+<p>Example:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-157-1"><a id="__codelineno-157-1" name="__codelineno-157-1" href="#__codelineno-157-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span><span id="__span-157-2"><a id="__codelineno-157-2" name="__codelineno-157-2" href="#__codelineno-157-2"></a>    <span class="ni">&amp;lt;</span>b<span class="ni">&amp;gt;</span>TEST<span class="ni">&amp;lt;</span>/b<span class="ni">&amp;gt;</span>
+</span><span id="__span-157-3"><a id="__codelineno-157-3" name="__codelineno-157-3" href="#__codelineno-157-3"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>This is probably just encoded text.</p>
+<p>Another example:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-158-1"><a id="__codelineno-158-1" name="__codelineno-158-1" href="#__codelineno-158-1"></a><span class="p">&lt;</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</span><span id="__span-158-2"><a id="__codelineno-158-2" name="__codelineno-158-2" href="#__codelineno-158-2"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span><span id="__span-158-3"><a id="__codelineno-158-3" name="__codelineno-158-3" href="#__codelineno-158-3"></a><span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>The string exists in the response, but it is not necessarily parsed as an HTML element.</p>
+<p>Another example:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-159-1"><a id="__codelineno-159-1" name="__codelineno-159-1" href="#__codelineno-159-1"></a><span class="cm">&lt;!-- &lt;b&gt;TEST&lt;/b&gt; --&gt;</span>
+</span></code></pre></div>
+<p>Again, it is not being rendered as normal HTML.</p>
+<p>Qualys explicitly warns that scanners cannot simply search for strings such as <code>&lt;script&gt;</code> or <code>alert()</code>; they need to determine whether the payload actually changes the document structure or produces exploitable browser behavior.</p>
+<hr />
+<h1 id="35-bug-bounty-severity">35. Bug Bounty Severity<a class="headerlink" href="#35-bug-bounty-severity" title="Permanent link">&para;</a></h1>
+<p>Severity depends on context and impact.</p>
+<p>Consider:</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Typical Impact Consideration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reflected visual HTML only</td>
+<td>Usually limited</td>
+</tr>
+<tr>
+<td>Stored visual HTML</td>
+<td>More significant</td>
+</tr>
+<tr>
+<td>Public page defacement</td>
+<td>Higher impact depending on audience</td>
+</tr>
+<tr>
+<td>HTML can manipulate forms</td>
+<td>Potentially significant</td>
+</tr>
+<tr>
+<td>HTML affects privileged users</td>
+<td>Potentially significant</td>
+</tr>
+<tr>
+<td>Base Tag Injection</td>
+<td>Context-dependent</td>
+</tr>
+<tr>
+<td>HTML Injection → XSS</td>
+<td>Report as XSS if proven</td>
+</tr>
+<tr>
+<td>HTML Injection → CSRF impact</td>
+<td>Depends on demonstrated bypass</td>
+</tr>
+<tr>
+<td>Credential phishing</td>
+<td>Depends on realistic victim exposure</td>
+</tr>
+</tbody>
+</table>
+<p>Do not blindly assign:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-160-1"><a id="__codelineno-160-1" name="__codelineno-160-1" href="#__codelineno-160-1"></a>Critical
+</span></code></pre></div>
+<p>because an HTML tag works.</p>
+<p>Bug bounty programs have different severity standards.</p>
+<p>Always read the program's policy.</p>
+<hr />
+<h1 id="36-writing-the-bug-report">36. Writing the Bug Report<a class="headerlink" href="#36-writing-the-bug-report" title="Permanent link">&para;</a></h1>
+<p>A good report should be reproducible.</p>
+<p>Use this structure:</p>
+<div class="language-markdown highlight"><pre><span></span><code><span id="__span-161-1"><a id="__codelineno-161-1" name="__codelineno-161-1" href="#__codelineno-161-1"></a><span class="gh"># HTML Injection in [Parameter]</span>
+</span><span id="__span-161-2"><a id="__codelineno-161-2" name="__codelineno-161-2" href="#__codelineno-161-2"></a>
+</span><span id="__span-161-3"><a id="__codelineno-161-3" name="__codelineno-161-3" href="#__codelineno-161-3"></a><span class="gu">## Summary</span>
+</span><span id="__span-161-4"><a id="__codelineno-161-4" name="__codelineno-161-4" href="#__codelineno-161-4"></a>
+</span><span id="__span-161-5"><a id="__codelineno-161-5" name="__codelineno-161-5" href="#__codelineno-161-5"></a>The <span class="sb">`[parameter]`</span> parameter is vulnerable to HTML Injection.
+</span><span id="__span-161-6"><a id="__codelineno-161-6" name="__codelineno-161-6" href="#__codelineno-161-6"></a>Attacker-controlled HTML is rendered as markup in the affected page.
+</span><span id="__span-161-7"><a id="__codelineno-161-7" name="__codelineno-161-7" href="#__codelineno-161-7"></a>
+</span><span id="__span-161-8"><a id="__codelineno-161-8" name="__codelineno-161-8" href="#__codelineno-161-8"></a><span class="gu">## Steps to Reproduce</span>
+</span><span id="__span-161-9"><a id="__codelineno-161-9" name="__codelineno-161-9" href="#__codelineno-161-9"></a>
+</span><span id="__span-161-10"><a id="__codelineno-161-10" name="__codelineno-161-10" href="#__codelineno-161-10"></a><span class="k">1.</span> Open [URL].
+</span><span id="__span-161-11"><a id="__codelineno-161-11" name="__codelineno-161-11" href="#__codelineno-161-11"></a><span class="k">2.</span> Navigate to [feature].
+</span><span id="__span-161-12"><a id="__codelineno-161-12" name="__codelineno-161-12" href="#__codelineno-161-12"></a><span class="k">3.</span> Submit the following value:
+</span><span id="__span-161-13"><a id="__codelineno-161-13" name="__codelineno-161-13" href="#__codelineno-161-13"></a>
+</span><span id="__span-161-14"><a id="__codelineno-161-14" name="__codelineno-161-14" href="#__codelineno-161-14"></a>&lt;b&gt;HTMLTEST&lt;/b&gt;
+</span><span id="__span-161-15"><a id="__codelineno-161-15" name="__codelineno-161-15" href="#__codelineno-161-15"></a>
+</span><span id="__span-161-16"><a id="__codelineno-161-16" name="__codelineno-161-16" href="#__codelineno-161-16"></a><span class="k">4.</span> Observe that the value is rendered as HTML.
+</span><span id="__span-161-17"><a id="__codelineno-161-17" name="__codelineno-161-17" href="#__codelineno-161-17"></a><span class="k">5.</span> Inspect the resulting page.
+</span><span id="__span-161-18"><a id="__codelineno-161-18" name="__codelineno-161-18" href="#__codelineno-161-18"></a>
+</span><span id="__span-161-19"><a id="__codelineno-161-19" name="__codelineno-161-19" href="#__codelineno-161-19"></a><span class="gu">## Payload</span>
+</span><span id="__span-161-20"><a id="__codelineno-161-20" name="__codelineno-161-20" href="#__codelineno-161-20"></a>
+</span><span id="__span-161-21"><a id="__codelineno-161-21" name="__codelineno-161-21" href="#__codelineno-161-21"></a>&lt;b&gt;HTMLTEST&lt;/b&gt;
+</span><span id="__span-161-22"><a id="__codelineno-161-22" name="__codelineno-161-22" href="#__codelineno-161-22"></a>
+</span><span id="__span-161-23"><a id="__codelineno-161-23" name="__codelineno-161-23" href="#__codelineno-161-23"></a><span class="gu">## Expected Result</span>
+</span><span id="__span-161-24"><a id="__codelineno-161-24" name="__codelineno-161-24" href="#__codelineno-161-24"></a>
+</span><span id="__span-161-25"><a id="__codelineno-161-25" name="__codelineno-161-25" href="#__codelineno-161-25"></a>User-controlled input should be rendered as text.
+</span><span id="__span-161-26"><a id="__codelineno-161-26" name="__codelineno-161-26" href="#__codelineno-161-26"></a>
+</span><span id="__span-161-27"><a id="__codelineno-161-27" name="__codelineno-161-27" href="#__codelineno-161-27"></a><span class="gu">## Actual Result</span>
+</span><span id="__span-161-28"><a id="__codelineno-161-28" name="__codelineno-161-28" href="#__codelineno-161-28"></a>
+</span><span id="__span-161-29"><a id="__codelineno-161-29" name="__codelineno-161-29" href="#__codelineno-161-29"></a>The application renders the attacker-controlled input as HTML.
+</span><span id="__span-161-30"><a id="__codelineno-161-30" name="__codelineno-161-30" href="#__codelineno-161-30"></a>
+</span><span id="__span-161-31"><a id="__codelineno-161-31" name="__codelineno-161-31" href="#__codelineno-161-31"></a><span class="gu">## Impact</span>
+</span><span id="__span-161-32"><a id="__codelineno-161-32" name="__codelineno-161-32" href="#__codelineno-161-32"></a>
+</span><span id="__span-161-33"><a id="__codelineno-161-33" name="__codelineno-161-33" href="#__codelineno-161-33"></a>An attacker can modify the rendered page content and potentially
+</span><span id="__span-161-34"><a id="__codelineno-161-34" name="__codelineno-161-34" href="#__codelineno-161-34"></a>manipulate the interface presented to users.
+</span><span id="__span-161-35"><a id="__codelineno-161-35" name="__codelineno-161-35" href="#__codelineno-161-35"></a>
+</span><span id="__span-161-36"><a id="__codelineno-161-36" name="__codelineno-161-36" href="#__codelineno-161-36"></a><span class="gu">## Remediation</span>
+</span><span id="__span-161-37"><a id="__codelineno-161-37" name="__codelineno-161-37" href="#__codelineno-161-37"></a>
+</span><span id="__span-161-38"><a id="__codelineno-161-38" name="__codelineno-161-38" href="#__codelineno-161-38"></a>Apply context-appropriate output encoding and sanitize HTML only
+</span><span id="__span-161-39"><a id="__codelineno-161-39" name="__codelineno-161-39" href="#__codelineno-161-39"></a>where HTML is intentionally allowed.
+</span></code></pre></div>
+<hr />
+<h1 id="37-remediation">37. Remediation<a class="headerlink" href="#37-remediation" title="Permanent link">&para;</a></h1>
+<p>The primary defense is:</p>
+<blockquote>
+<p>Treat untrusted data as data, not markup.</p>
+</blockquote>
+<p>OWASP recommends context-specific output encoding, appropriate input validation, and safe DOM APIs.</p>
+<hr />
+<h1 id="38-developer-side-secure-coding">38. Developer-Side Secure Coding<a class="headerlink" href="#38-developer-side-secure-coding" title="Permanent link">&para;</a></h1>
+<h2 id="unsafe">Unsafe<a class="headerlink" href="#unsafe" title="Permanent link">&para;</a></h2>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-162-1"><a id="__codelineno-162-1" name="__codelineno-162-1" href="#__codelineno-162-1"></a><span class="nx">element</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">username</span><span class="p">;</span>
+</span></code></pre></div>
+<h2 id="safer">Safer<a class="headerlink" href="#safer" title="Permanent link">&para;</a></h2>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-163-1"><a id="__codelineno-163-1" name="__codelineno-163-1" href="#__codelineno-163-1"></a><span class="nx">element</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">username</span><span class="p">;</span>
+</span></code></pre></div>
+<p><code>textContent</code> treats the value as text rather than HTML.</p>
+<p>OWASP specifically recommends safe sinks such as <code>textContent</code> when HTML is not intentionally required.</p>
+<hr />
+<h2 id="server-side-example">Server-Side Example<a class="headerlink" href="#server-side-example" title="Permanent link">&para;</a></h2>
+<p>Instead of:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-164-1"><a id="__codelineno-164-1" name="__codelineno-164-1" href="#__codelineno-164-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>{{ user_input }}<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>where the template engine may allow raw HTML, use the framework's normal escaped output mechanism.</p>
+<p>Modern frameworks frequently provide automatic escaping.</p>
+<p>The important rule is:</p>
+<blockquote>
+<p>Do not disable automatic escaping unless you actually need to render trusted/sanitized HTML.</p>
+</blockquote>
+<hr />
+<h1 id="39-html-sanitization">39. HTML Sanitization<a class="headerlink" href="#39-html-sanitization" title="Permanent link">&para;</a></h1>
+<p>Sometimes an application genuinely needs users to submit HTML.</p>
+<p>Examples:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-165-1"><a id="__codelineno-165-1" name="__codelineno-165-1" href="#__codelineno-165-1"></a>Rich-text editor
+</span><span id="__span-165-2"><a id="__codelineno-165-2" name="__codelineno-165-2" href="#__codelineno-165-2"></a>Blog editor
+</span><span id="__span-165-3"><a id="__codelineno-165-3" name="__codelineno-165-3" href="#__codelineno-165-3"></a>Documentation editor
+</span><span id="__span-165-4"><a id="__codelineno-165-4" name="__codelineno-165-4" href="#__codelineno-165-4"></a>Markdown renderer
+</span><span id="__span-165-5"><a id="__codelineno-165-5" name="__codelineno-165-5" href="#__codelineno-165-5"></a>Email template editor
+</span></code></pre></div>
+<p>In those situations, simply escaping everything may break the application's functionality.</p>
+<p>Instead, use a mature HTML sanitizer with an allowlist.</p>
+<p>For example:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-166-1"><a id="__codelineno-166-1" name="__codelineno-166-1" href="#__codelineno-166-1"></a>Allowed tags:
+</span><span id="__span-166-2"><a id="__codelineno-166-2" name="__codelineno-166-2" href="#__codelineno-166-2"></a>p
+</span><span id="__span-166-3"><a id="__codelineno-166-3" name="__codelineno-166-3" href="#__codelineno-166-3"></a>b
+</span><span id="__span-166-4"><a id="__codelineno-166-4" name="__codelineno-166-4" href="#__codelineno-166-4"></a>i
+</span><span id="__span-166-5"><a id="__codelineno-166-5" name="__codelineno-166-5" href="#__codelineno-166-5"></a>strong
+</span><span id="__span-166-6"><a id="__codelineno-166-6" name="__codelineno-166-6" href="#__codelineno-166-6"></a>em
+</span><span id="__span-166-7"><a id="__codelineno-166-7" name="__codelineno-166-7" href="#__codelineno-166-7"></a>ul
+</span><span id="__span-166-8"><a id="__codelineno-166-8" name="__codelineno-166-8" href="#__codelineno-166-8"></a>ol
+</span><span id="__span-166-9"><a id="__codelineno-166-9" name="__codelineno-166-9" href="#__codelineno-166-9"></a>li
+</span></code></pre></div>
+<p>Potentially forbidden:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-167-1"><a id="__codelineno-167-1" name="__codelineno-167-1" href="#__codelineno-167-1"></a>script
+</span><span id="__span-167-2"><a id="__codelineno-167-2" name="__codelineno-167-2" href="#__codelineno-167-2"></a>iframe
+</span><span id="__span-167-3"><a id="__codelineno-167-3" name="__codelineno-167-3" href="#__codelineno-167-3"></a>object
+</span><span id="__span-167-4"><a id="__codelineno-167-4" name="__codelineno-167-4" href="#__codelineno-167-4"></a>embed
+</span><span id="__span-167-5"><a id="__codelineno-167-5" name="__codelineno-167-5" href="#__codelineno-167-5"></a>base
+</span><span id="__span-167-6"><a id="__codelineno-167-6" name="__codelineno-167-6" href="#__codelineno-167-6"></a>event-handler attributes
+</span><span id="__span-167-7"><a id="__codelineno-167-7" name="__codelineno-167-7" href="#__codelineno-167-7"></a>dangerous URL schemes
+</span></code></pre></div>
+<p>The exact policy depends on the application.</p>
+<p>Do not write your own HTML sanitizer unless there is a very strong reason.</p>
+<hr />
+<h1 id="40-content-security-policy">40. Content Security Policy<a class="headerlink" href="#40-content-security-policy" title="Permanent link">&para;</a></h1>
+<p>CSP is useful defense-in-depth.</p>
+<p>Example:</p>
+<div class="language-http highlight"><pre><span></span><code><span id="__span-168-1"><a id="__codelineno-168-1" name="__codelineno-168-1" href="#__codelineno-168-1"></a><span class="err">Content-Security-Policy:</span>
+</span><span id="__span-168-2"><a id="__codelineno-168-2" name="__codelineno-168-2" href="#__codelineno-168-2"></a><span class="err">    default-src 'self';</span>
+</span><span id="__span-168-3"><a id="__codelineno-168-3" name="__codelineno-168-3" href="#__codelineno-168-3"></a><span class="err">    script-src 'self';</span>
+</span><span id="__span-168-4"><a id="__codelineno-168-4" name="__codelineno-168-4" href="#__codelineno-168-4"></a><span class="err">    object-src 'none';</span>
+</span><span id="__span-168-5"><a id="__codelineno-168-5" name="__codelineno-168-5" href="#__codelineno-168-5"></a><span class="err">    base-uri 'self';</span>
+</span></code></pre></div>
+<p>The:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-169-1"><a id="__codelineno-169-1" name="__codelineno-169-1" href="#__codelineno-169-1"></a>base-uri
+</span></code></pre></div>
+<p>directive is particularly relevant to Base Tag Injection.</p>
+<p>CSP should not be considered the primary fix for HTML Injection.</p>
+<p>The correct approach remains:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-170-1"><a id="__codelineno-170-1" name="__codelineno-170-1" href="#__codelineno-170-1"></a>Context-aware output encoding
+</span><span id="__span-170-2"><a id="__codelineno-170-2" name="__codelineno-170-2" href="#__codelineno-170-2"></a>+
+</span><span id="__span-170-3"><a id="__codelineno-170-3" name="__codelineno-170-3" href="#__codelineno-170-3"></a>Input validation
+</span><span id="__span-170-4"><a id="__codelineno-170-4" name="__codelineno-170-4" href="#__codelineno-170-4"></a>+
+</span><span id="__span-170-5"><a id="__codelineno-170-5" name="__codelineno-170-5" href="#__codelineno-170-5"></a>Sanitization when HTML is intentionally allowed
+</span><span id="__span-170-6"><a id="__codelineno-170-6" name="__codelineno-170-6" href="#__codelineno-170-6"></a>+
+</span><span id="__span-170-7"><a id="__codelineno-170-7" name="__codelineno-170-7" href="#__codelineno-170-7"></a>CSP as defense-in-depth
+</span></code></pre></div>
+<p>Invicti specifically warns against relying on CSP as a complete HTML Injection defense.</p>
+<hr />
+<h1 id="41-testing-checklist">41. Testing Checklist<a class="headerlink" href="#41-testing-checklist" title="Permanent link">&para;</a></h1>
+<p>Use this checklist during bug hunting.</p>
+<h2 id="discovery">Discovery<a class="headerlink" href="#discovery" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-171-1"><a id="__codelineno-171-1" name="__codelineno-171-1" href="#__codelineno-171-1"></a>[ ] Search parameters
+</span><span id="__span-171-2"><a id="__codelineno-171-2" name="__codelineno-171-2" href="#__codelineno-171-2"></a>[ ] POST parameters
+</span><span id="__span-171-3"><a id="__codelineno-171-3" name="__codelineno-171-3" href="#__codelineno-171-3"></a>[ ] JSON fields
+</span><span id="__span-171-4"><a id="__codelineno-171-4" name="__codelineno-171-4" href="#__codelineno-171-4"></a>[ ] Path parameters
+</span><span id="__span-171-5"><a id="__codelineno-171-5" name="__codelineno-171-5" href="#__codelineno-171-5"></a>[ ] Profile fields
+</span><span id="__span-171-6"><a id="__codelineno-171-6" name="__codelineno-171-6" href="#__codelineno-171-6"></a>[ ] Comments
+</span><span id="__span-171-7"><a id="__codelineno-171-7" name="__codelineno-171-7" href="#__codelineno-171-7"></a>[ ] Names
+</span><span id="__span-171-8"><a id="__codelineno-171-8" name="__codelineno-171-8" href="#__codelineno-171-8"></a>[ ] Descriptions
+</span><span id="__span-171-9"><a id="__codelineno-171-9" name="__codelineno-171-9" href="#__codelineno-171-9"></a>[ ] Titles
+</span><span id="__span-171-10"><a id="__codelineno-171-10" name="__codelineno-171-10" href="#__codelineno-171-10"></a>[ ] Tickets
+</span><span id="__span-171-11"><a id="__codelineno-171-11" name="__codelineno-171-11" href="#__codelineno-171-11"></a>[ ] Notifications
+</span><span id="__span-171-12"><a id="__codelineno-171-12" name="__codelineno-171-12" href="#__codelineno-171-12"></a>[ ] API fields
+</span><span id="__span-171-13"><a id="__codelineno-171-13" name="__codelineno-171-13" href="#__codelineno-171-13"></a>[ ] WebSocket messages
+</span><span id="__span-171-14"><a id="__codelineno-171-14" name="__codelineno-171-14" href="#__codelineno-171-14"></a>[ ] URL fragments
+</span></code></pre></div>
+<h2 id="reflection">Reflection<a class="headerlink" href="#reflection" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-172-1"><a id="__codelineno-172-1" name="__codelineno-172-1" href="#__codelineno-172-1"></a>[ ] Does my marker appear?
+</span><span id="__span-172-2"><a id="__codelineno-172-2" name="__codelineno-172-2" href="#__codelineno-172-2"></a>[ ] Is it reflected immediately?
+</span><span id="__span-172-3"><a id="__codelineno-172-3" name="__codelineno-172-3" href="#__codelineno-172-3"></a>[ ] Is it stored?
+</span><span id="__span-172-4"><a id="__codelineno-172-4" name="__codelineno-172-4" href="#__codelineno-172-4"></a>[ ] Is it reflected elsewhere?
+</span></code></pre></div>
+<h2 id="context">Context<a class="headerlink" href="#context" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-173-1"><a id="__codelineno-173-1" name="__codelineno-173-1" href="#__codelineno-173-1"></a>[ ] HTML body
+</span><span id="__span-173-2"><a id="__codelineno-173-2" name="__codelineno-173-2" href="#__codelineno-173-2"></a>[ ] Attribute
+</span><span id="__span-173-3"><a id="__codelineno-173-3" name="__codelineno-173-3" href="#__codelineno-173-3"></a>[ ] href
+</span><span id="__span-173-4"><a id="__codelineno-173-4" name="__codelineno-173-4" href="#__codelineno-173-4"></a>[ ] src
+</span><span id="__span-173-5"><a id="__codelineno-173-5" name="__codelineno-173-5" href="#__codelineno-173-5"></a>[ ] Form
+</span><span id="__span-173-6"><a id="__codelineno-173-6" name="__codelineno-173-6" href="#__codelineno-173-6"></a>[ ] JavaScript
+</span><span id="__span-173-7"><a id="__codelineno-173-7" name="__codelineno-173-7" href="#__codelineno-173-7"></a>[ ] CSS
+</span><span id="__span-173-8"><a id="__codelineno-173-8" name="__codelineno-173-8" href="#__codelineno-173-8"></a>[ ] DOM sink
+</span></code></pre></div>
+<h2 id="encoding">Encoding<a class="headerlink" href="#encoding" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-174-1"><a id="__codelineno-174-1" name="__codelineno-174-1" href="#__codelineno-174-1"></a>[ ] &lt;
+</span><span id="__span-174-2"><a id="__codelineno-174-2" name="__codelineno-174-2" href="#__codelineno-174-2"></a>[ ] &gt;
+</span><span id="__span-174-3"><a id="__codelineno-174-3" name="__codelineno-174-3" href="#__codelineno-174-3"></a>[ ] "
+</span><span id="__span-174-4"><a id="__codelineno-174-4" name="__codelineno-174-4" href="#__codelineno-174-4"></a>[ ] '
+</span><span id="__span-174-5"><a id="__codelineno-174-5" name="__codelineno-174-5" href="#__codelineno-174-5"></a>[ ] &amp;
+</span></code></pre></div>
+<p>Check whether they are:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-175-1"><a id="__codelineno-175-1" name="__codelineno-175-1" href="#__codelineno-175-1"></a>Encoded
+</span><span id="__span-175-2"><a id="__codelineno-175-2" name="__codelineno-175-2" href="#__codelineno-175-2"></a>Removed
+</span><span id="__span-175-3"><a id="__codelineno-175-3" name="__codelineno-175-3" href="#__codelineno-175-3"></a>Normalized
+</span><span id="__span-175-4"><a id="__codelineno-175-4" name="__codelineno-175-4" href="#__codelineno-175-4"></a>Decoded
+</span><span id="__span-175-5"><a id="__codelineno-175-5" name="__codelineno-175-5" href="#__codelineno-175-5"></a>Double-decoded
+</span></code></pre></div>
+<h2 id="html">HTML<a class="headerlink" href="#html" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-176-1"><a id="__codelineno-176-1" name="__codelineno-176-1" href="#__codelineno-176-1"></a>[ ] &lt;b&gt;
+</span><span id="__span-176-2"><a id="__codelineno-176-2" name="__codelineno-176-2" href="#__codelineno-176-2"></a>[ ] &lt;i&gt;
+</span><span id="__span-176-3"><a id="__codelineno-176-3" name="__codelineno-176-3" href="#__codelineno-176-3"></a>[ ] &lt;div&gt;
+</span><span id="__span-176-4"><a id="__codelineno-176-4" name="__codelineno-176-4" href="#__codelineno-176-4"></a>[ ] &lt;span&gt;
+</span><span id="__span-176-5"><a id="__codelineno-176-5" name="__codelineno-176-5" href="#__codelineno-176-5"></a>[ ] &lt;h1&gt;
+</span><span id="__span-176-6"><a id="__codelineno-176-6" name="__codelineno-176-6" href="#__codelineno-176-6"></a>[ ] &lt;a&gt;
+</span><span id="__span-176-7"><a id="__codelineno-176-7" name="__codelineno-176-7" href="#__codelineno-176-7"></a>[ ] &lt;img&gt;
+</span><span id="__span-176-8"><a id="__codelineno-176-8" name="__codelineno-176-8" href="#__codelineno-176-8"></a>[ ] &lt;form&gt;
+</span><span id="__span-176-9"><a id="__codelineno-176-9" name="__codelineno-176-9" href="#__codelineno-176-9"></a>[ ] &lt;base&gt;
+</span></code></pre></div>
+<h2 id="impact">Impact<a class="headerlink" href="#impact" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-177-1"><a id="__codelineno-177-1" name="__codelineno-177-1" href="#__codelineno-177-1"></a>[ ] Visual modification
+</span><span id="__span-177-2"><a id="__codelineno-177-2" name="__codelineno-177-2" href="#__codelineno-177-2"></a>[ ] Stored impact
+</span><span id="__span-177-3"><a id="__codelineno-177-3" name="__codelineno-177-3" href="#__codelineno-177-3"></a>[ ] Cross-user impact
+</span><span id="__span-177-4"><a id="__codelineno-177-4" name="__codelineno-177-4" href="#__codelineno-177-4"></a>[ ] Form manipulation
+</span><span id="__span-177-5"><a id="__codelineno-177-5" name="__codelineno-177-5" href="#__codelineno-177-5"></a>[ ] Resource loading
+</span><span id="__span-177-6"><a id="__codelineno-177-6" name="__codelineno-177-6" href="#__codelineno-177-6"></a>[ ] Base URL manipulation
+</span><span id="__span-177-7"><a id="__codelineno-177-7" name="__codelineno-177-7" href="#__codelineno-177-7"></a>[ ] Possible XSS escalation
+</span><span id="__span-177-8"><a id="__codelineno-177-8" name="__codelineno-177-8" href="#__codelineno-177-8"></a>[ ] Possible CSRF interaction
+</span></code></pre></div>
+<hr />
+<h1 id="42-beginner-bug-hunter-workflow">42. Beginner Bug Hunter Workflow<a class="headerlink" href="#42-beginner-bug-hunter-workflow" title="Permanent link">&para;</a></h1>
+<p>Here is the workflow I recommend memorizing.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-178-1"><a id="__codelineno-178-1" name="__codelineno-178-1" href="#__codelineno-178-1"></a>                 FIND INPUT
+</span><span id="__span-178-2"><a id="__codelineno-178-2" name="__codelineno-178-2" href="#__codelineno-178-2"></a>                     |
+</span><span id="__span-178-3"><a id="__codelineno-178-3" name="__codelineno-178-3" href="#__codelineno-178-3"></a>                     v
+</span><span id="__span-178-4"><a id="__codelineno-178-4" name="__codelineno-178-4" href="#__codelineno-178-4"></a>              INSERT MARKER
+</span><span id="__span-178-5"><a id="__codelineno-178-5" name="__codelineno-178-5" href="#__codelineno-178-5"></a>                     |
+</span><span id="__span-178-6"><a id="__codelineno-178-6" name="__codelineno-178-6" href="#__codelineno-178-6"></a>                     v
+</span><span id="__span-178-7"><a id="__codelineno-178-7" name="__codelineno-178-7" href="#__codelineno-178-7"></a>              FIND REFLECTION
+</span><span id="__span-178-8"><a id="__codelineno-178-8" name="__codelineno-178-8" href="#__codelineno-178-8"></a>                     |
+</span><span id="__span-178-9"><a id="__codelineno-178-9" name="__codelineno-178-9" href="#__codelineno-178-9"></a>                     v
+</span><span id="__span-178-10"><a id="__codelineno-178-10" name="__codelineno-178-10" href="#__codelineno-178-10"></a>           IDENTIFY HTML CONTEXT
+</span><span id="__span-178-11"><a id="__codelineno-178-11" name="__codelineno-178-11" href="#__codelineno-178-11"></a>                     |
+</span><span id="__span-178-12"><a id="__codelineno-178-12" name="__codelineno-178-12" href="#__codelineno-178-12"></a>        +------------+-------------+
+</span><span id="__span-178-13"><a id="__codelineno-178-13" name="__codelineno-178-13" href="#__codelineno-178-13"></a>        |            |             |
+</span><span id="__span-178-14"><a id="__codelineno-178-14" name="__codelineno-178-14" href="#__codelineno-178-14"></a>        v            v             v
+</span><span id="__span-178-15"><a id="__codelineno-178-15" name="__codelineno-178-15" href="#__codelineno-178-15"></a>      BODY       ATTRIBUTE        URL
+</span><span id="__span-178-16"><a id="__codelineno-178-16" name="__codelineno-178-16" href="#__codelineno-178-16"></a>        |            |             |
+</span><span id="__span-178-17"><a id="__codelineno-178-17" name="__codelineno-178-17" href="#__codelineno-178-17"></a>        +------------+-------------+
+</span><span id="__span-178-18"><a id="__codelineno-178-18" name="__codelineno-178-18" href="#__codelineno-178-18"></a>                     |
+</span><span id="__span-178-19"><a id="__codelineno-178-19" name="__codelineno-178-19" href="#__codelineno-178-19"></a>                     v
+</span><span id="__span-178-20"><a id="__codelineno-178-20" name="__codelineno-178-20" href="#__codelineno-178-20"></a>             TEST SIMPLE HTML
+</span><span id="__span-178-21"><a id="__codelineno-178-21" name="__codelineno-178-21" href="#__codelineno-178-21"></a>                     |
+</span><span id="__span-178-22"><a id="__codelineno-178-22" name="__codelineno-178-22" href="#__codelineno-178-22"></a>                     v
+</span><span id="__span-178-23"><a id="__codelineno-178-23" name="__codelineno-178-23" href="#__codelineno-178-23"></a>          DOES BROWSER PARSE IT?
+</span><span id="__span-178-24"><a id="__codelineno-178-24" name="__codelineno-178-24" href="#__codelineno-178-24"></a>               /             \
+</span><span id="__span-178-25"><a id="__codelineno-178-25" name="__codelineno-178-25" href="#__codelineno-178-25"></a>             NO               YES
+</span><span id="__span-178-26"><a id="__codelineno-178-26" name="__codelineno-178-26" href="#__codelineno-178-26"></a>             |                 |
+</span><span id="__span-178-27"><a id="__codelineno-178-27" name="__codelineno-178-27" href="#__codelineno-178-27"></a>             v                 v
+</span><span id="__span-178-28"><a id="__codelineno-178-28" name="__codelineno-178-28" href="#__codelineno-178-28"></a>        Investigate       Confirm HTML
+</span><span id="__span-178-29"><a id="__codelineno-178-29" name="__codelineno-178-29" href="#__codelineno-178-29"></a>        encoding/filter   Injection
+</span><span id="__span-178-30"><a id="__codelineno-178-30" name="__codelineno-178-30" href="#__codelineno-178-30"></a>                               |
+</span><span id="__span-178-31"><a id="__codelineno-178-31" name="__codelineno-178-31" href="#__codelineno-178-31"></a>                               v
+</span><span id="__span-178-32"><a id="__codelineno-178-32" name="__codelineno-178-32" href="#__codelineno-178-32"></a>                       Determine impact
+</span><span id="__span-178-33"><a id="__codelineno-178-33" name="__codelineno-178-33" href="#__codelineno-178-33"></a>                               |
+</span><span id="__span-178-34"><a id="__codelineno-178-34" name="__codelineno-178-34" href="#__codelineno-178-34"></a>                               v
+</span><span id="__span-178-35"><a id="__codelineno-178-35" name="__codelineno-178-35" href="#__codelineno-178-35"></a>                       Check stored/reflected
+</span><span id="__span-178-36"><a id="__codelineno-178-36" name="__codelineno-178-36" href="#__codelineno-178-36"></a>                               |
+</span><span id="__span-178-37"><a id="__codelineno-178-37" name="__codelineno-178-37" href="#__codelineno-178-37"></a>                               v
+</span><span id="__span-178-38"><a id="__codelineno-178-38" name="__codelineno-178-38" href="#__codelineno-178-38"></a>                       Test escalation safely
+</span><span id="__span-178-39"><a id="__codelineno-178-39" name="__codelineno-178-39" href="#__codelineno-178-39"></a>                               |
+</span><span id="__span-178-40"><a id="__codelineno-178-40" name="__codelineno-178-40" href="#__codelineno-178-40"></a>                               v
+</span><span id="__span-178-41"><a id="__codelineno-178-41" name="__codelineno-178-41" href="#__codelineno-178-41"></a>                          Write report
+</span></code></pre></div>
+<hr />
+<h1 id="43-advanced-testing-ideas">43. Advanced Testing Ideas<a class="headerlink" href="#43-advanced-testing-ideas" title="Permanent link">&para;</a></h1>
+<p>Once you understand basic HTML Injection, start thinking in terms of <strong>parsing contexts</strong>, not payload lists.</p>
+<h2 id="431-context-transitions">43.1 Context transitions<a class="headerlink" href="#431-context-transitions" title="Permanent link">&para;</a></h2>
+<p>Ask:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-179-1"><a id="__codelineno-179-1" name="__codelineno-179-1" href="#__codelineno-179-1"></a>Can I move from text context to attribute context?
+</span></code></pre></div>
+<p>For example:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-180-1"><a id="__codelineno-180-1" name="__codelineno-180-1" href="#__codelineno-180-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>INPUT<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>versus:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-181-1"><a id="__codelineno-181-1" name="__codelineno-181-1" href="#__codelineno-181-1"></a><span class="p">&lt;</span><span class="nt">input</span> <span class="na">value</span><span class="o">=</span><span class="s">"INPUT"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="432-tag-termination">43.2 Tag termination<a class="headerlink" href="#432-tag-termination" title="Permanent link">&para;</a></h2>
+<p>Determine whether the application allows structural characters to terminate the current element.</p>
+<hr />
+<h2 id="433-attribute-injection">43.3 Attribute injection<a class="headerlink" href="#433-attribute-injection" title="Permanent link">&para;</a></h2>
+<p>Test whether you can introduce additional attributes.</p>
+<hr />
+<h2 id="434-url-manipulation">43.4 URL manipulation<a class="headerlink" href="#434-url-manipulation" title="Permanent link">&para;</a></h2>
+<p>Determine whether attacker-controlled data becomes:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-182-1"><a id="__codelineno-182-1" name="__codelineno-182-1" href="#__codelineno-182-1"></a>href
+</span><span id="__span-182-2"><a id="__codelineno-182-2" name="__codelineno-182-2" href="#__codelineno-182-2"></a>src
+</span><span id="__span-182-3"><a id="__codelineno-182-3" name="__codelineno-182-3" href="#__codelineno-182-3"></a>action
+</span><span id="__span-182-4"><a id="__codelineno-182-4" name="__codelineno-182-4" href="#__codelineno-182-4"></a>poster
+</span><span id="__span-182-5"><a id="__codelineno-182-5" name="__codelineno-182-5" href="#__codelineno-182-5"></a>cite
+</span></code></pre></div>
+<p>or other URL-bearing attributes.</p>
+<hr />
+<h2 id="435-base-url-manipulation">43.5 Base URL manipulation<a class="headerlink" href="#435-base-url-manipulation" title="Permanent link">&para;</a></h2>
+<p>Check whether:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-183-1"><a id="__codelineno-183-1" name="__codelineno-183-1" href="#__codelineno-183-1"></a><span class="p">&lt;</span><span class="nt">base</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>is accepted and whether the application relies heavily on relative URLs.</p>
+<hr />
+<h2 id="436-dom-sinks">43.6 DOM sinks<a class="headerlink" href="#436-dom-sinks" title="Permanent link">&para;</a></h2>
+<p>Search JavaScript for:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-184-1"><a id="__codelineno-184-1" name="__codelineno-184-1" href="#__codelineno-184-1"></a><span class="nx">innerHTML</span>
+</span><span id="__span-184-2"><a id="__codelineno-184-2" name="__codelineno-184-2" href="#__codelineno-184-2"></a><span class="nx">outerHTML</span>
+</span><span id="__span-184-3"><a id="__codelineno-184-3" name="__codelineno-184-3" href="#__codelineno-184-3"></a><span class="nx">insertAdjacentHTML</span>
+</span><span id="__span-184-4"><a id="__codelineno-184-4" name="__codelineno-184-4" href="#__codelineno-184-4"></a><span class="nb">document</span><span class="p">.</span><span class="nx">write</span>
+</span><span id="__span-184-5"><a id="__codelineno-184-5" name="__codelineno-184-5" href="#__codelineno-184-5"></a><span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span>
+</span></code></pre></div>
+<p>Then trace the data source.</p>
+<p>Potential sources include:</p>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-185-1"><a id="__codelineno-185-1" name="__codelineno-185-1" href="#__codelineno-185-1"></a><span class="nx">location</span><span class="p">.</span><span class="nx">search</span>
+</span><span id="__span-185-2"><a id="__codelineno-185-2" name="__codelineno-185-2" href="#__codelineno-185-2"></a><span class="nx">location</span><span class="p">.</span><span class="nx">hash</span>
+</span><span id="__span-185-3"><a id="__codelineno-185-3" name="__codelineno-185-3" href="#__codelineno-185-3"></a><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span>
+</span><span id="__span-185-4"><a id="__codelineno-185-4" name="__codelineno-185-4" href="#__codelineno-185-4"></a><span class="nb">document</span><span class="p">.</span><span class="nx">referrer</span>
+</span><span id="__span-185-5"><a id="__codelineno-185-5" name="__codelineno-185-5" href="#__codelineno-185-5"></a><span class="nx">postMessage</span>
+</span><span id="__span-185-6"><a id="__codelineno-185-6" name="__codelineno-185-6" href="#__codelineno-185-6"></a><span class="nx">localStorage</span>
+</span><span id="__span-185-7"><a id="__codelineno-185-7" name="__codelineno-185-7" href="#__codelineno-185-7"></a><span class="nx">sessionStorage</span>
+</span></code></pre></div>
+<p>The key is the complete data flow:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-186-1"><a id="__codelineno-186-1" name="__codelineno-186-1" href="#__codelineno-186-1"></a>SOURCE → TRANSFORMATION → SINK
+</span></code></pre></div>
+<hr />
+<h1 id="44-useful-tools">44. Useful Tools<a class="headerlink" href="#44-useful-tools" title="Permanent link">&para;</a></h1>
+<h2 id="burp-suite">Burp Suite<a class="headerlink" href="#burp-suite" title="Permanent link">&para;</a></h2>
+<p>Useful for:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-187-1"><a id="__codelineno-187-1" name="__codelineno-187-1" href="#__codelineno-187-1"></a>Intercepting requests
+</span><span id="__span-187-2"><a id="__codelineno-187-2" name="__codelineno-187-2" href="#__codelineno-187-2"></a>Repeater
+</span><span id="__span-187-3"><a id="__codelineno-187-3" name="__codelineno-187-3" href="#__codelineno-187-3"></a>Intruder
+</span><span id="__span-187-4"><a id="__codelineno-187-4" name="__codelineno-187-4" href="#__codelineno-187-4"></a>Searching responses
+</span><span id="__span-187-5"><a id="__codelineno-187-5" name="__codelineno-187-5" href="#__codelineno-187-5"></a>Modifying parameters
+</span><span id="__span-187-6"><a id="__codelineno-187-6" name="__codelineno-187-6" href="#__codelineno-187-6"></a>Testing APIs
+</span></code></pre></div>
+<h2 id="browser-devtools">Browser DevTools<a class="headerlink" href="#browser-devtools" title="Permanent link">&para;</a></h2>
+<p>Use:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-188-1"><a id="__codelineno-188-1" name="__codelineno-188-1" href="#__codelineno-188-1"></a>Elements
+</span><span id="__span-188-2"><a id="__codelineno-188-2" name="__codelineno-188-2" href="#__codelineno-188-2"></a>Network
+</span><span id="__span-188-3"><a id="__codelineno-188-3" name="__codelineno-188-3" href="#__codelineno-188-3"></a>Sources
+</span><span id="__span-188-4"><a id="__codelineno-188-4" name="__codelineno-188-4" href="#__codelineno-188-4"></a>Console
+</span><span id="__span-188-5"><a id="__codelineno-188-5" name="__codelineno-188-5" href="#__codelineno-188-5"></a>Application
+</span></code></pre></div>
+<p>The <strong>Elements</strong> panel is particularly useful because it shows the browser's parsed DOM.</p>
+<p>Compare:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-189-1"><a id="__codelineno-189-1" name="__codelineno-189-1" href="#__codelineno-189-1"></a>HTTP Response
+</span></code></pre></div>
+<p>with:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-190-1"><a id="__codelineno-190-1" name="__codelineno-190-1" href="#__codelineno-190-1"></a>Rendered DOM
+</span></code></pre></div>
+<p>They may not be identical.</p>
+<hr />
+<h2 id="browser-view-source">Browser View Source<a class="headerlink" href="#browser-view-source" title="Permanent link">&para;</a></h2>
+<p>Use:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-191-1"><a id="__codelineno-191-1" name="__codelineno-191-1" href="#__codelineno-191-1"></a>View Source
+</span></code></pre></div>
+<p>to inspect the original HTML response.</p>
+<p>Then compare it with:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-192-1"><a id="__codelineno-192-1" name="__codelineno-192-1" href="#__codelineno-192-1"></a>Elements
+</span></code></pre></div>
+<p>This can help identify browser parsing behavior.</p>
+<hr />
+<h1 id="45-final-cheat-sheet">45. Final Cheat Sheet<a class="headerlink" href="#45-final-cheat-sheet" title="Permanent link">&para;</a></h1>
+<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-193-1"><a id="__codelineno-193-1" name="__codelineno-193-1" href="#__codelineno-193-1"></a>HTML Injection =
+</span><span id="__span-193-2"><a id="__codelineno-193-2" name="__codelineno-193-2" href="#__codelineno-193-2"></a>Attacker-controlled input
+</span><span id="__span-193-3"><a id="__codelineno-193-3" name="__codelineno-193-3" href="#__codelineno-193-3"></a>+
+</span><span id="__span-193-4"><a id="__codelineno-193-4" name="__codelineno-193-4" href="#__codelineno-193-4"></a>Unsafe HTML rendering
+</span></code></pre></div>
+<hr />
+<h2 id="main-types">Main Types<a class="headerlink" href="#main-types" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-194-1"><a id="__codelineno-194-1" name="__codelineno-194-1" href="#__codelineno-194-1"></a>Reflected
+</span><span id="__span-194-2"><a id="__codelineno-194-2" name="__codelineno-194-2" href="#__codelineno-194-2"></a>Stored
+</span><span id="__span-194-3"><a id="__codelineno-194-3" name="__codelineno-194-3" href="#__codelineno-194-3"></a>DOM-based
+</span></code></pre></div>
+<hr />
+<h2 id="first-payload">First Payload<a class="headerlink" href="#first-payload" title="Permanent link">&para;</a></h2>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-195-1"><a id="__codelineno-195-1" name="__codelineno-195-1" href="#__codelineno-195-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="other-safe-tests">Other Safe Tests<a class="headerlink" href="#other-safe-tests" title="Permanent link">&para;</a></h2>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-196-1"><a id="__codelineno-196-1" name="__codelineno-196-1" href="#__codelineno-196-1"></a><span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-197-1"><a id="__codelineno-197-1" name="__codelineno-197-1" href="#__codelineno-197-1"></a><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-198-1"><a id="__codelineno-198-1" name="__codelineno-198-1" href="#__codelineno-198-1"></a><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-199-1"><a id="__codelineno-199-1" name="__codelineno-199-1" href="#__codelineno-199-1"></a><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">"/test"</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="main-question">Main Question<a class="headerlink" href="#main-question" title="Permanent link">&para;</a></h2>
+<p>Always ask:</p>
+<blockquote>
+<p>Where does my input land?</p>
+</blockquote>
+<hr />
+<h2 id="contexts">Contexts<a class="headerlink" href="#contexts" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-200-1"><a id="__codelineno-200-1" name="__codelineno-200-1" href="#__codelineno-200-1"></a>HTML
+</span><span id="__span-200-2"><a id="__codelineno-200-2" name="__codelineno-200-2" href="#__codelineno-200-2"></a>Attribute
+</span><span id="__span-200-3"><a id="__codelineno-200-3" name="__codelineno-200-3" href="#__codelineno-200-3"></a>URL
+</span><span id="__span-200-4"><a id="__codelineno-200-4" name="__codelineno-200-4" href="#__codelineno-200-4"></a>JavaScript
+</span><span id="__span-200-5"><a id="__codelineno-200-5" name="__codelineno-200-5" href="#__codelineno-200-5"></a>CSS
+</span><span id="__span-200-6"><a id="__codelineno-200-6" name="__codelineno-200-6" href="#__codelineno-200-6"></a>DOM
+</span></code></pre></div>
+<hr />
+<h2 id="dangerous-sinks">Dangerous Sinks<a class="headerlink" href="#dangerous-sinks" title="Permanent link">&para;</a></h2>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-201-1"><a id="__codelineno-201-1" name="__codelineno-201-1" href="#__codelineno-201-1"></a><span class="nx">innerHTML</span>
+</span><span id="__span-201-2"><a id="__codelineno-201-2" name="__codelineno-201-2" href="#__codelineno-201-2"></a><span class="nx">outerHTML</span>
+</span><span id="__span-201-3"><a id="__codelineno-201-3" name="__codelineno-201-3" href="#__codelineno-201-3"></a><span class="nx">insertAdjacentHTML</span>
+</span><span id="__span-201-4"><a id="__codelineno-201-4" name="__codelineno-201-4" href="#__codelineno-201-4"></a><span class="nb">document</span><span class="p">.</span><span class="nx">write</span>
+</span><span id="__span-201-5"><a id="__codelineno-201-5" name="__codelineno-201-5" href="#__codelineno-201-5"></a><span class="nb">document</span><span class="p">.</span><span class="nx">writeln</span>
+</span></code></pre></div>
+<hr />
+<h2 id="interesting-html-elements">Interesting HTML Elements<a class="headerlink" href="#interesting-html-elements" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-202-1"><a id="__codelineno-202-1" name="__codelineno-202-1" href="#__codelineno-202-1"></a>&lt;form&gt;
+</span><span id="__span-202-2"><a id="__codelineno-202-2" name="__codelineno-202-2" href="#__codelineno-202-2"></a>&lt;a&gt;
+</span><span id="__span-202-3"><a id="__codelineno-202-3" name="__codelineno-202-3" href="#__codelineno-202-3"></a>&lt;img&gt;
+</span><span id="__span-202-4"><a id="__codelineno-202-4" name="__codelineno-202-4" href="#__codelineno-202-4"></a>&lt;iframe&gt;
+</span><span id="__span-202-5"><a id="__codelineno-202-5" name="__codelineno-202-5" href="#__codelineno-202-5"></a>&lt;base&gt;
+</span></code></pre></div>
+<hr />
+<h2 id="base-tag">Base Tag<a class="headerlink" href="#base-tag" title="Permanent link">&para;</a></h2>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-203-1"><a id="__codelineno-203-1" name="__codelineno-203-1" href="#__codelineno-203-1"></a><span class="p">&lt;</span><span class="nt">base</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://controlled.example/"</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>Remember:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-204-1"><a id="__codelineno-204-1" name="__codelineno-204-1" href="#__codelineno-204-1"></a>&lt;base&gt;
+</span><span id="__span-204-2"><a id="__codelineno-204-2" name="__codelineno-204-2" href="#__codelineno-204-2"></a>      ↓
+</span><span id="__span-204-3"><a id="__codelineno-204-3" name="__codelineno-204-3" href="#__codelineno-204-3"></a>Changes resolution of relative URLs
+</span></code></pre></div>
+<hr />
+<h2 id="encoding_1">Encoding<a class="headerlink" href="#encoding_1" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-205-1"><a id="__codelineno-205-1" name="__codelineno-205-1" href="#__codelineno-205-1"></a>&lt;  → &amp;lt;
+</span><span id="__span-205-2"><a id="__codelineno-205-2" name="__codelineno-205-2" href="#__codelineno-205-2"></a>&gt;  → &amp;gt;
+</span><span id="__span-205-3"><a id="__codelineno-205-3" name="__codelineno-205-3" href="#__codelineno-205-3"></a>"  → &amp;quot;
+</span><span id="__span-205-4"><a id="__codelineno-205-4" name="__codelineno-205-4" href="#__codelineno-205-4"></a>'  → &amp;#x27;
+</span><span id="__span-205-5"><a id="__codelineno-205-5" name="__codelineno-205-5" href="#__codelineno-205-5"></a>&amp;  → &amp;amp;
+</span></code></pre></div>
+<hr />
+<h2 id="detection-logic">Detection Logic<a class="headerlink" href="#detection-logic" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-206-1"><a id="__codelineno-206-1" name="__codelineno-206-1" href="#__codelineno-206-1"></a>Marker reflected?
+</span><span id="__span-206-2"><a id="__codelineno-206-2" name="__codelineno-206-2" href="#__codelineno-206-2"></a>        |
+</span><span id="__span-206-3"><a id="__codelineno-206-3" name="__codelineno-206-3" href="#__codelineno-206-3"></a>        v
+</span><span id="__span-206-4"><a id="__codelineno-206-4" name="__codelineno-206-4" href="#__codelineno-206-4"></a>Where?
+</span><span id="__span-206-5"><a id="__codelineno-206-5" name="__codelineno-206-5" href="#__codelineno-206-5"></a>        |
+</span><span id="__span-206-6"><a id="__codelineno-206-6" name="__codelineno-206-6" href="#__codelineno-206-6"></a>        v
+</span><span id="__span-206-7"><a id="__codelineno-206-7" name="__codelineno-206-7" href="#__codelineno-206-7"></a>HTML context?
+</span><span id="__span-206-8"><a id="__codelineno-206-8" name="__codelineno-206-8" href="#__codelineno-206-8"></a>        |
+</span><span id="__span-206-9"><a id="__codelineno-206-9" name="__codelineno-206-9" href="#__codelineno-206-9"></a>        v
+</span><span id="__span-206-10"><a id="__codelineno-206-10" name="__codelineno-206-10" href="#__codelineno-206-10"></a>HTML interpreted?
+</span><span id="__span-206-11"><a id="__codelineno-206-11" name="__codelineno-206-11" href="#__codelineno-206-11"></a>        |
+</span><span id="__span-206-12"><a id="__codelineno-206-12" name="__codelineno-206-12" href="#__codelineno-206-12"></a>        v
+</span><span id="__span-206-13"><a id="__codelineno-206-13" name="__codelineno-206-13" href="#__codelineno-206-13"></a>Stored or reflected?
+</span><span id="__span-206-14"><a id="__codelineno-206-14" name="__codelineno-206-14" href="#__codelineno-206-14"></a>        |
+</span><span id="__span-206-15"><a id="__codelineno-206-15" name="__codelineno-206-15" href="#__codelineno-206-15"></a>        v
+</span><span id="__span-206-16"><a id="__codelineno-206-16" name="__codelineno-206-16" href="#__codelineno-206-16"></a>What impact?
+</span><span id="__span-206-17"><a id="__codelineno-206-17" name="__codelineno-206-17" href="#__codelineno-206-17"></a>        |
+</span><span id="__span-206-18"><a id="__codelineno-206-18" name="__codelineno-206-18" href="#__codelineno-206-18"></a>        v
+</span><span id="__span-206-19"><a id="__codelineno-206-19" name="__codelineno-206-19" href="#__codelineno-206-19"></a>Can it escalate?
+</span></code></pre></div>
+<hr />
+<h2 id="reporting-rule">Reporting Rule<a class="headerlink" href="#reporting-rule" title="Permanent link">&para;</a></h2>
+<p>Never say:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-207-1"><a id="__codelineno-207-1" name="__codelineno-207-1" href="#__codelineno-207-1"></a>XSS
+</span></code></pre></div>
+<p>just because:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-208-1"><a id="__codelineno-208-1" name="__codelineno-208-1" href="#__codelineno-208-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>works.</p>
+<p>Instead say:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-209-1"><a id="__codelineno-209-1" name="__codelineno-209-1" href="#__codelineno-209-1"></a>HTML Injection
+</span></code></pre></div>
+<p>unless you have demonstrated actual script execution or another condition that makes it an XSS finding.</p>
+<hr />
+<h1 id="46-references">46. References<a class="headerlink" href="#46-references" title="Permanent link">&para;</a></h1>
+<h3 id="owasp">OWASP<a class="headerlink" href="#owasp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>OWASP Web Security Testing Guide — Testing for HTML Injection.</li>
+<li>OWASP Cross-Site Scripting Prevention Cheat Sheet.</li>
+<li>OWASP DOM-Based XSS Prevention guidance.</li>
+</ul>
+<h3 id="portswigger">PortSwigger<a class="headerlink" href="#portswigger" title="Permanent link">&para;</a></h3>
+<ul>
+<li>XSS Contexts and understanding injection contexts.</li>
+<li>XSS Prevention and context-specific output encoding.</li>
+<li>XSS Cheat Sheet.</li>
+</ul>
+<h3 id="cwe">CWE<a class="headerlink" href="#cwe" title="Permanent link">&para;</a></h3>
+<ul>
+<li>CWE-79 — Improper Neutralization of Input During Web Page Generation.</li>
+</ul>
+<h3 id="invicti">Invicti<a class="headerlink" href="#invicti" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HTML Injection — Learn.</li>
+<li>HTML Injection — Vulnerability Database.</li>
+</ul>
+<h3 id="qualys">Qualys<a class="headerlink" href="#qualys" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Finding HTML Injection Vulnerabilities, Part I.</li>
+</ul>
+<h3 id="punk-security">Punk Security<a class="headerlink" href="#punk-security" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Base Tag HTML Injection: A Guide for Pentesters.</li>
+</ul>
+<h3 id="cdnetworks">CDNetworks<a class="headerlink" href="#cdnetworks" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HTML Injection Glossary.</li>
+</ul>
+<h3 id="wallarm">Wallarm<a class="headerlink" href="#wallarm" title="Permanent link">&para;</a></h3>
+<ul>
+<li>HTML Injection — Mitigation and Prevention.</li>
+</ul>
+<hr />
+<h1 id="the-most-important-lesson">The Most Important Lesson<a class="headerlink" href="#the-most-important-lesson" title="Permanent link">&para;</a></h1>
+<p>If you are a beginner bug hunter, <strong>do not memorize hundreds of HTML Injection payloads</strong>.</p>
+<p>Learn to answer these five questions:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-210-1"><a id="__codelineno-210-1" name="__codelineno-210-1" href="#__codelineno-210-1"></a>1. Can I control the input?
+</span><span id="__span-210-2"><a id="__codelineno-210-2" name="__codelineno-210-2" href="#__codelineno-210-2"></a>
+</span><span id="__span-210-3"><a id="__codelineno-210-3" name="__codelineno-210-3" href="#__codelineno-210-3"></a>2. Where exactly does my input appear?
+</span><span id="__span-210-4"><a id="__codelineno-210-4" name="__codelineno-210-4" href="#__codelineno-210-4"></a>
+</span><span id="__span-210-5"><a id="__codelineno-210-5" name="__codelineno-210-5" href="#__codelineno-210-5"></a>3. Is the input encoded or interpreted as HTML?
+</span><span id="__span-210-6"><a id="__codelineno-210-6" name="__codelineno-210-6" href="#__codelineno-210-6"></a>
+</span><span id="__span-210-7"><a id="__codelineno-210-7" name="__codelineno-210-7" href="#__codelineno-210-7"></a>4. Is the injection reflected, stored, or DOM-based?
+</span><span id="__span-210-8"><a id="__codelineno-210-8" name="__codelineno-210-8" href="#__codelineno-210-8"></a>
+</span><span id="__span-210-9"><a id="__codelineno-210-9" name="__codelineno-210-9" href="#__codelineno-210-9"></a>5. What security impact can I actually demonstrate?
+</span></code></pre></div>
+<p>Once you can answer those five questions, HTML Injection becomes much easier to find.</p>
+<p>The real skill is not:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-211-1"><a id="__codelineno-211-1" name="__codelineno-211-1" href="#__codelineno-211-1"></a>"I know a payload."
+</span></code></pre></div>
+<p>The real skill is:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-212-1"><a id="__codelineno-212-1" name="__codelineno-212-1" href="#__codelineno-212-1"></a>"I understand how the browser parses my input,
+</span><span id="__span-212-2"><a id="__codelineno-212-2" name="__codelineno-212-2" href="#__codelineno-212-2"></a>what context I am in, what the application does
+</span><span id="__span-212-3"><a id="__codelineno-212-3" name="__codelineno-212-3" href="#__codelineno-212-3"></a>to my input, and what security boundary I can affect."
+</span></code></pre></div>
+<p>That mindset is what allows a beginner bug hunter to move from simple:</p>
+<div class="language-html highlight"><pre><span></span><code><span id="__span-213-1"><a id="__codelineno-213-1" name="__codelineno-213-1" href="#__codelineno-213-1"></a><span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>TEST<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>
+</span></code></pre></div>
+<p>to understanding complex cases involving attributes, forms, APIs, DOM manipulation, Base Tag Injection, stored data, and possible XSS escalation.</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
